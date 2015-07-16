@@ -16,10 +16,11 @@ projects 和 tasks是 Gradle 中最重要的两个概念。
 
 你可以创建如下脚本到 build.gradle 中 To try this out，create the following build script named build.gradle。
 
-### 例 6.1. 第一个构建脚本
+### 第一个构建脚本
+
+build.gradle
 
 ```
-build.gradle
 task hello {
     doLast {
         println 'Hello world!'
@@ -33,7 +34,7 @@ task hello {
 > 
 > 该文档的示例中很多地方在调用 gradle 命令时都加了 -q 参数。该参数用来控制 gradle 的日志级别，可以保证只输出我们需要的内容。具体可参阅本文档第十八章日志来了解更多参数和信息。
 
-### 例 6.2. 执行脚本
+### 执行脚本
 
 ```
 Output of gradle -q hello
@@ -49,10 +50,11 @@ Hello world!
 
 用一种更简洁的方式来定义上面的 hello 任务。
 
-### 例 6.3.快速定义任务
+### 快速定义任务
+
+build.gradle
 
 ```
-build.gradle
 task hello << {
     println 'Hello world!'
 }
@@ -64,10 +66,11 @@ task hello << {
 
 Gradle 脚本采用 Groovy 书写，作为开胃菜,看下下面这个例子。 
 
-### 例 6.4 在 gradle 任务中采用 groovy
+### 在 gradle 任务中采用 groovy
+
+build.gradle
 
 ```
-build.gradle
 task upper << {
     String someString = 'mY_nAmE'
     println "Original: " + someString
@@ -81,10 +84,11 @@ Upper case: MY_NAME
 
 或者
 
-### 例 6.5 在 gradle 任务中采用 groovy
+### 在 gradle 任务中采用 groovy
+
+build.gradle
 
 ```
-build.gradle
 task count << {
     4.times { print "$it " }
 }
@@ -99,9 +103,7 @@ Output of gradle -q count
 
 ### 在两个任务之间指明依赖关系
 
-```
 build.gradle
-```
 
 ```
 task hello << {
@@ -123,12 +125,9 @@ I'm Gradle
 
 添加依赖 task 也可以不必首先声明被依赖的 task。
 
-
 ## 延迟依赖 
 
-```
 build.gradle
-```
 
 ```
 task taskX(dependsOn: 'taskY') << {
@@ -147,10 +146,9 @@ taskY
 taskX
 ```
 
-可以看到，taskX 是 在 taskY 之前定义的，这在多项目构建中非常有用。关于任务依赖的更多信息可以查看章节 15.4，“给任务添加依赖”。
+可以看到，taskX 是 在 taskY 之前定义的，这在多项目构建中非常有用。
 
-注意:当引用的任务尚未定义的时候不可使用短标记法(看章节 6.8， “短标记法”) 来运行任务。
-
+注意:当引用的任务尚未定义的时候不可使用短标记法来运行任务。
 
 ## 动态任务
 
@@ -158,9 +156,7 @@ taskX
 
 ### 创建动态任务
 
-```
 build.gradle
-```
 
 ```
 4.times { counter ->
@@ -182,11 +178,9 @@ I'm task number 1
 
 一旦任务被创建后，任务之间可以通过 API 进行相互访问。这也是与 Ant 的不同之处。比如可以增加一些依赖。
 
-### 例 6.9. 通过 API进行任务之间的通信 - 增加依赖
+### 通过 API 进行任务之间的通信 - 增加依赖
 
-```
 build.gradle
-```
 
 ```
 4.times { counter ->
@@ -209,11 +203,9 @@ I'm task number 0
 
 为已存在的任务增加行为。
 
-### 例 6.10. 通过 API 进行任务之间的通信 - 增加任务行为
+### 通过 API 进行任务之间的通信 - 增加任务行为
 
-```
 build.gradle
-```
 
 ```
 task hello << {
@@ -243,11 +235,9 @@ doFirst 和 doLast 可以进行多次调用。他们分别被添加在任务的�
 
 你早就注意到了吧，没错，每个任务都是一个脚本的属性，你可以访问它:
 
-### 例 6.11. 以属性的方式访问任务
+### 以属性的方式访问任务
 
-```
 build.gradle
-```
 
 ```
 task hello << {
@@ -273,12 +263,9 @@ Greetings from the hello task.
 
 你可以为一个任务添加额外的属性。例如,新增一个叫做 myProperty 的属性，用 ext.myProperty 的方式给他一个初始值。这样便增加了一个自定义属性。
 
+### 为任务增加自定义属性
 
-### 例 6.12. 为任务增加自定义属性
-
-```
 build.gradle
-```
 
 ```
 task myTask {
@@ -298,17 +285,15 @@ Output of gradle -q printTaskProperties
 myValue
 ```
 
-自定义属性不仅仅局限于任务上，还可以做更多事情。你可以阅读章节 13.4.2，“自定义属性”来了解更多内容。
+自定义属性不仅仅局限于任务上，还可以做更多事情。
 
-## 调用Ant任务
+## 调用 Ant 任务
 
 Ant 任务是 Gradle 中的一等公民。Gradle 借助 Groovy 对 Ant 任务进行了优秀的整合。Gradle 自带了一个 AntBuilder，在 Gradle 中调用 Ant 任务比在 build.xml 中调用更加的方便和强大。 通过下面的例子你可以学到如何调用一个 Ant 任务以及如何与 Ant 中的属性进行通信。
 
-### 例 6.13. 利用AntBuilder执行 ant.loadfile 
+### 利用 AntBuilder 执行 ant.loadfile 
 
-```
 build.gradle
-```
 
 ```
 task loadfile << {
@@ -338,18 +323,15 @@ Make the impossible possible, make the possible easy and make the easy elegant.
 (inspired by Moshe Feldenkrais)
 ```
 
-在你脚本里还可以利用 Ant 做更多的事情。想了解更多请参阅章节 17，在 Gradle 中调用 Ant。
-
+在你脚本里还可以利用 Ant 做更多的事情。想了解更多请参阅[在 Gradle 中调用 Ant](invoke-ant-seventeen.md)。
 
 ## 方法抽取
 
 Gradle 的强大要看你如何编写脚本逻辑。针对上面的例子，首先要做的就是要抽取方法。
 
-### 例 6.14 利用方法组织脚本逻辑
+### 利用方法组织脚本逻辑
 
-```
 build.gradle
-```
 
 ```
 task checksum << {
@@ -378,18 +360,16 @@ I'm fond of agile.manifesto.txt
 I'm fond of gradle.manifesto.txt
 ```
 
-在后面的章节你会看到类似出去出来的方法可以在多项目构建中的子项目中调用。无论构建逻辑多复杂，Gradle 都可以提供给你一种简便的方式来组织它们。想了解更多请参阅章节 59，组织构建逻辑。
+在后面的章节你会看到类似出去出来的方法可以在多项目构建中的子项目中调用。无论构建逻辑多复杂，Gradle 都可以提供给你一种简便的方式来组织它们。
 
 
 ## 定义默认任务
 
 Gradle 允许在脚本中定义多个默认任务。
 
-## 例 6.15. 定义默认任务
+## 定义默认任务
 
-```
 build.gradle
-```
 
 ```
 defaultTasks 'clean', 'run'
@@ -417,15 +397,13 @@ Default Running!
 
 ## Configure by DAG
 
-稍后会对 Gradle 的配置阶段和运行阶段进行详细说明 (详见 章节 55，构建的生命周期 )配置阶段后，Gradle 会了解所有要执行的任务 Gradle 提供了一个钩子来捕获这些信息。一个例子就是可以检查已经执行的任务中有没有被释放。借由此，你可以为一些变量赋予不同的值。 
+稍后会对 Gradle 的配置阶段和运行阶段进行详细说明 配置阶段后，Gradle 会了解所有要执行的任务 Gradle 提供了一个钩子来捕获这些信息。一个例子就是可以检查已经执行的任务中有没有被释放。借由此，你可以为一些变量赋予不同的值。 
 
 在下面的例子中，为 distribution 和 release 任务赋予了不同的 version 值。
 
-### 例 6.16. 依赖任务的不同输出
+### 依赖任务的不同输出
 
-```
 build.gradle
-```
 
 ```
 task distribution << {
@@ -451,7 +429,7 @@ Output of gradle -q distribution
 We build the zip with version=1.0-SNAPSHOT
 ```
 
-gradle -q release的输出结果
+gradle -q release 的输出结果
 
 ```
 Output of gradle -q release
@@ -464,8 +442,7 @@ whenReady 会在已发布的任务之前影响到已发布任务的执行。即�
 
 ## 下一步目标
 
-在本章中，我们了解了什么是 task，但这还不够详细。欲知更多请参阅章节 15，任务进阶。
+在本章中，我们了解了什么是 task，但这还不够详细。欲知更多请参阅章节[任务进阶](detailed-task-fifeen.md)。
 
-另外，可以目录继续学习第七章，Java 快速入门和第八章，依赖管理基础。
+另外，可以目录继续学习[Java 构建入门](java-quickstart.md)和[依赖管理基础](dependency-management-basics.md)。
 
-[2]附录中有命令可以更改这种默认行为。请参阅附录 [D，Gradle](http://gradledoc.qiniudn.com/1.12/userguide/gradle_command_line.html) 命令行。

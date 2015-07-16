@@ -2,7 +2,7 @@
 
 本章节介绍如何使用 Gradle 进行基本的依赖管理.
 
-## 神马是依赖管理?
+## 什么是依赖管理?
 
 通俗来讲，依赖管理由如下两部分组成。首先，Gradle 需要知道项目构建或运行所需要的一些文件，以便于找到这些需要的文件。我们称这些输入的文件为项目的依赖。其次，你可能需要构建完成后自动上传到某个地方。我们称这些输出为发布。下面来仔细介绍一下这两部分：
 
@@ -20,11 +20,9 @@
 
 来看一下这个脚本里声明依赖的部分：
 
-### 例 8.1. 声明依赖 
+### 声明依赖 
 
-```
 build.gradle
-```
 
 ```
 apply plugin: 'java'
@@ -37,7 +35,7 @@ dependencies {
 }
 ```
 
-这是毛意思呢？这段脚本是这么个意思。首先，Hibernate-core.3.6.7.final.jar 这货是编译期必需的依赖。并且这货相关的依赖也会一并被加载进来，该段脚本同时还声明项目测试阶段需要 4.0 版本以上的 Junit。同时告诉 Gradle 可以去 Maven 中央仓库去找这些依赖。下面的章节会进行更详细的描述。
+这是什么意思呢？这段脚本是这么个意思。首先，Hibernate-core.3.6.7.final.jar 这货是编译期必需的依赖。并且这货相关的依赖也会一并被加载进来，该段脚本同时还声明项目测试阶段需要 4.0 版本以上的 Junit。同时告诉 Gradle 可以去 Maven 中央仓库去找这些依赖。下面的章节会进行更详细的描述。
 
 ## 依赖配置
 
@@ -48,7 +46,6 @@ Java 插件定义了许多标准配置项。这些配置项形成了插件本身
 ### compile
 
 编译范围依赖在所有的 classpath 中可用，同时它们也会被打包
-
 
 ### runtime
 
@@ -62,8 +59,7 @@ runtime 依赖在运行和测试系统的时候需要，但在编译的时候不
 
 测试运行期需要 
 
-不同的插件提供了不同的标准配置，你甚至也可以定义属于自己的配置项。具体可查看 章节 50.3，“依赖配置” 。
-
+不同的插件提供了不同的标准配置，你甚至也可以定义属于自己的配置项。
 
 ## 外部依赖
 
@@ -71,11 +67,9 @@ runtime 依赖在运行和测试系统的时候需要，但在编译的时候不
 
 定义外部依赖需要像下面这样进行依赖配置
 
-### 例  8.2. 定义外部依赖.
+### 定义外部依赖
 
-```
 build.gradle
-```
 
 ```
 dependencies {
@@ -87,12 +81,9 @@ dependencies {
 
 当然，也有一种更加简洁的方式来声明外部依赖。采用：将三个属性拼接在一起即可。"group:name:version" 
 
+### 快速定义外部依赖
 
-### 例 8.3. 快速定义外部依赖
-
-```
 build.gradle
-```
 
 ```
 dependencies {
@@ -100,19 +91,15 @@ dependencies {
 }
 ```
 
-更多定义依赖的方式可以参阅 章节 50.4， “如何声明依赖”。
-
 ## 仓库
 
 Gradle 是在一个被称之为*仓库*的地方找寻所需的外部依赖。仓库即是一个按 group，name 和 version 规则进行存储的一些文件。Gradle 可以支持不同的仓库存储格式，如 Maven 和 Ivy，并且还提供多种与仓库进行通信的方式，如通过本地文件系统或 HTTP。
 
 默认情况下，Gradle 没有定义任何仓库，你需要在使用外部依赖之前至少定义一个仓库，例如 Maven 中央仓库。
 
-### 例 8.4. 使用Maven中央仓库
+### 使用 Maven 中央仓库
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -122,11 +109,9 @@ repositories {
 
 或者其它远程 Maven 仓库：
 
-### 例 8.5. 使用Maven远程仓库
+### 使用 Maven 远程仓库
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -138,11 +123,9 @@ repositories {
 
 或者采用 Ivy 远程仓库
 
-### 例 8.6. 采用Ivy远程仓库
+### 采用 Ivy 远程仓库
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -154,11 +137,9 @@ repositories {
 
 或者在指定本地文件系统构建的库。
 
-### 例 8.7. 采用本地Ivy目录
+### 采用本地 Ivy 目录
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -179,11 +160,9 @@ repositories {
 
 插件对于打包提供了完美的支持，所以通常而言无需特别告诉 Gradle 需要做什么。但是你需要告诉 Gradle 发布到哪里。这就需要在 uploadArchives 任务中添加一个仓库。下面的例子是如何发布到远程 Ivy 仓库的：
 
-### 例 8.8. 发布到Ivy仓库.
+### 发布到 Ivy 仓库
 
-```
 build.gradle
-```
 
 ```
 uploadArchives {
@@ -205,11 +184,9 @@ uploadArchives {
 
 p.s：发布到 Maven 仓库你需要 Maven 插件的支持，当然，Gradle 也会同时产生 pom.xml 一起上传到目标仓库。
 
-### 例 8.9. 发布到Maven仓库
+### 发布到 Maven 仓库
 
-```
 build.gradle
-```
 
 ```
 apply plugin: 'maven'
@@ -222,13 +199,9 @@ uploadArchives {
 }
 ```
 
-了解更多有关发布的内容，请参阅第 51 章，内容发布 artifacts。
-
 ## 下一步目标
 
-了解更多有关依赖的问题，请参阅第 50 章，依赖管理，了解更多有关发布的内容，请参阅第 51 章， 内容发布 artifacts。
-
-若对 DS L感兴趣，请看 [Project.configurations{}](http://gradledoc.qiniudn.com/1.12/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations(groovy.lang.Closure))，[Project.repositories{}](http://gradledoc.qiniudn.com/1.12/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)) 和 [Project.dependencies{}](http://gradledoc.qiniudn.com/1.12/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure))。
+若对 DSL 感兴趣，请看 [Project.configurations{}](http://gradledoc.qiniudn.com/1.12/dsl/org.gradle.api.Project.html#org.gradle.api.Project:configurations(groovy.lang.Closure))，[Project.repositories{}](http://gradledoc.qiniudn.com/1.12/dsl/org.gradle.api.Project.html#org.gradle.api.Project:repositories(groovy.lang.Closure)) 和 [Project.dependencies{}](http://gradledoc.qiniudn.com/1.12/dsl/org.gradle.api.Project.html#org.gradle.api.Project:dependencies(groovy.lang.Closure))。
 
 另外，继续顺着手册学习其它章节内容吧。~
 

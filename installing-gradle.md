@@ -12,7 +12,6 @@ Gradle 需要 1.5 或更高版本的 JDK.Gradle 自带了 Groovy 库，所以不
 
 Gradle 发行包是一个 ZIP 文件。完整的发行包包括以下内容(官方发行包有 full 完整版，也有不带源码和文档的版本，可根据需求下载。[Rover12421]译注):
 
-
 - Gradle 可执行文件
 - 用户手册 (有 PDF 和 HTML 两种版本)
 - DSL 参考指南
@@ -22,7 +21,7 @@ Gradle 发行包是一个 ZIP 文件。完整的发行包包括以下内容(官�
 
 ## 配置环境变量
 
-运行 gradle 必须将 GRADLE_HOME/bin 加入到你的 PATH 环境变量中.
+运行 gradle 必须将 GRADLE_HOME/bin 加入到你的 PATH 环境变量中。
 
 ## 测试安装
 
@@ -34,4 +33,4 @@ gradle -v
 
 ## JVM 参数配置
 
-Gradle 运行时的 JVM 参数可以通过 GRADLE_OPTS 或 JAVA_OPTS 来设置.这些参数将会同时生效。 JAVA_OPTS 设置的参数将会同其它JAVA应用共享，一个典型的例子是可以在 JAVA_OPTS 中设置代理和 GRADLE_OPTS 设置内存参数。同时这些参数也可以在 gradle 或者 gradlew 脚本文件的开头进行设置。
+Gradle 运行时的 JVM 参数可以通过 GRADLE_OPTS 或 JAVA_OPTS 来设置.这些参数将会同时生效。 JAVA_OPTS 设置的参数将会同其它 JAVA 应用共享，一个典型的例子是可以在 JAVA_OPTS 中设置代理和 GRADLE_OPTS 设置内存参数。同时这些参数也可以在 gradle 或者 gradlew 脚本文件的开头进行设置。

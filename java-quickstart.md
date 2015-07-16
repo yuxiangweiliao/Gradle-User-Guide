@@ -4,17 +4,17 @@
 
 如你所见，Gradle 是一个通用工具。它可以通过脚本构建任何你想要实现的东西，真正实现开箱即用。但前提是你需要在脚本中编写好代码才行。
 
-大部分 Java 项目基本流程都是相似的:编译源文件，进行单元测试，创建Jar包。使用 Gradle 做这些工作不必为每个工程都编写代码。Gradle 已经提供了完美的插件来解决这些问题。插件就是 Gradle 的扩展，简而言之就是为你添加一些非常有用的默认配置。Gradle 自带了很多插件，并且你也可以很容易的编写和分享自己的插件。Java plugin 作为其中之一，为你提供了诸如编译，测试，打包等一些功能。
+大部分 Java 项目基本流程都是相似的：编译源文件，进行单元测试，创建 jar 包。使用 Gradle 做这些工作不必为每个工程都编写代码。Gradle 已经提供了完美的插件来解决这些问题。插件就是 Gradle 的扩展，简而言之就是为你添加一些非常有用的默认配置。Gradle 自带了很多插件，并且你也可以很容易的编写和分享自己的插件。Java plugin 作为其中之一，为你提供了诸如编译，测试，打包等一些功能。
 
 Java 插件为工程定义了许多默认值，如Java源文件位置。如果你遵循这些默认规则，那么你无需在你的脚本文件中书写太多代码。当然，Gradle 也允许你自定义项目中的一些规则，实际上，由于对 Java 工程的构建是基于插件的，那么你也可以完全不用插件自己编写代码来进行构建。
 
 后面的章节我们通过许多深入的例子介绍了如何使用 Java 插件来进行以来管理和多项目构建等。但在这个章节我们需要先了解 Java 插件的基本用法。
 
-## 一个基本Java项目
+## 一个基本 Java 项目
 
 来看一下下面这个小例子，想用 Java 插件，只需增加如下代码到你的脚本里。
 
-### 例 7.1. 采用 Java 插件
+### 采用 Java 插件
 
 ```
 build.gradle
@@ -34,21 +34,22 @@ apply plugin: 'java'
 
 标准目录结构如下:
 
+```
 project  
 	+build  
     +src/main/java  
     +src/main/resources  
     +src/test/java  
     +src/test/resources  
+```
 
-Gradle 默认会从 src/main/java 搜寻打包源码，在 src/test/java 下搜寻测试源码。并且 src/main/resources 下的所有文件按都会被打包，所有 src/test/resources 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下。
+Gradle 默认会从 `src/main/java` 搜寻打包源码，在 `src/test/java` 下搜寻测试源码。并且 `src/main/resources` 下的所有文件按都会被打包，所有 `src/test/resources` 下的文件 都会被添加到类路径用以执行测试。所有文件都输出到 build 下，打包的文件输出到 build/libs 下。
 
 ### 构建项目
 
+Java 插件为你添加了众多任务。但是它们只是在你需要构建项目的时候才能发挥作用。最常用的就是 build 任务,这会构建整个项目。当你执行 gradle build 时，Gralde 会编译并执行单元测试，并且将 `src/main/*` 下面 class 和资源文件打包。
 
-Java 插件为你添加了众多任务。但是它们只是在你需要构建项目的时候才能发挥作用。最常用的就是 build 任务,这会构建整个项目。当你执行 gradle build 时，Gralde 会编译并执行单元测试，并且将 src/main/* 下面 class 和资源文件打包。
-
-### 例 7.2. 构建Java项目
+### 构建 Java 项目
 
 运行 gradle build 的输出结果
 
@@ -88,7 +89,7 @@ Total time: 1 secs
 
 通常，一个 Java 项目拥有许多外部依赖。你需要告诉 Gradle 如何找到并引用这些外部文件。在 Gradle 中通常 Jar 包都存在于仓库中。仓库可以用来搜寻依赖或发布项目产物。下面是一个采用 Maven 仓库的例子。
 
-### 例 7.3 添加Maven仓库
+### 添加 Maven 仓库
 
 ```
 build.gradle
@@ -102,7 +103,7 @@ repositories {
 
 添加依赖。这里声明了编译期所需依赖 commons-collections 和测试期所需依赖 junit。
 
-### 例 7.4 添加依赖
+### 添加依赖
 
 ```
 build.gradle
@@ -115,13 +116,13 @@ dependencies {
 }
 ```
 
-了解更多可参阅第 8 章，依赖管理基础.
+了解更多可参阅[依赖管理基础](dependency-management-basics.md)
 
 ### 自定义项目
 
-Java 插件为你的项目添加了众多默认配置。这些默认值通常对于一个普通项目来说已经足够了。但如果你觉得不适用修改起来也很简单。看下面的例子，我们为 Java 项目指定了版本号以及所用的 Jdk 版本，并且添加一些属性到 mainfest 中。
+Java 插件为你的项目添加了众多默认配置。这些默认值通常对于一个普通项目来说已经足够了。但如果你觉得不适用修改起来也很简单。看下面的例子，我们为 Java 项目指定了版本号以及所用的 JDK 版本，并且添加一些属性到 mainfest 中。
 
-### 例 7.5. 自定义 MANIFEST.MF
+### 自定义 MANIFEST.MF
 
 ```
 build.gradle
@@ -143,7 +144,7 @@ jar {
 
 Java 插件添加的都是一些普通任务，如同他们写在 Build 文件中一样。这意味着前面章节展示的机制都可以用来修改这些任务的行为。例如，可以设置任务的属性，添加任务行为，更改任务依赖，甚至是重写覆盖整个任务。在下面的例子中，我们将修改 test 任务，这是一个 Test 类型任务。让我们来在它执行时为它添加一些系统属性。
 
-### 例 7.6 为test添加系统属性
+###  为 test 添加系统属性
 
 ```
 build.gradle
@@ -155,11 +156,11 @@ test {
 }
 ```
 
-### 发布Jar包
+### 发布 jar 包
 
-如何发布 Jar 包?你需要告诉 Gradle 发布到到哪。在 Gradle 中 Jar 包通常被发布到某个仓库中。 在下面的例子中，我们会将 Jar 包发布到本地目录。当然你也可以发布到远程仓库或多个远程仓库中。
+如何发布 jar 包?你需要告诉 Gradle 发布到到哪。在 Gradle 中 jar 包通常被发布到某个仓库中。在下面的例子中，我们会将 jar 包发布到本地目录。当然你也可以发布到远程仓库或多个远程仓库中。
 
-### 例 7.7. 发布Jar包
+### 发布 jar 包
 
 ```
 build.gradle
@@ -175,14 +176,14 @@ uploadArchives {
 }
 ```
 
-执行 gradle uploadArchives 以发布 Jar 包。
+执行 gradle uploadArchives 以发布 jar 包。
 
 
-### 创建Eclipse文件
+### 创建 Eclipse 文件
 
 若要把项目导入 Eclipse 中，你需要添加另外一个插件到你的脚本文件中。
 
-### 例 7.8. Eclipse plugin
+### Eclipse plugin
 
 ```
 build.gradle
@@ -192,13 +193,13 @@ build.gradle
 apply plugin: 'eclipse'
 ```
 						
-执行 gradle eclipse 来生成 Eclipse 项目文件。了解更多内容请参阅第 38 章，The Eclipse 插件。
+执行 gradle eclipse 来生成 Eclipse 项目文件。
 
 ### 示例汇总
 
-这是示例代码汇总得到的一个完整脚本:
+这是示例代码汇总得到的一个完整脚本：
 
-### 例 7.9. Java 示例 - 一个完整构建脚本
+### Java 示例 - 一个完整构建脚本
 
 ```
 build.gradle
@@ -236,7 +237,7 @@ uploadArchives {
 
 现在来看一个典型的多项目构建的例子。项目结构如下：
 
-### 例 7.10. 多项目构建-项目结构
+### 多项目构建-项目结构
 
 ```
 Build layout
@@ -257,7 +258,7 @@ multiproject/
 
 定义一个多项目构建工程需要在根目录(本例中与 multiproject 同级)创建一个*setting* 配置文件来指明构建包含哪些项目。并且这个文件必需叫 settings.gradle 本例的配置文件如下:
 
-### 例 7.11. 多项目构建中的 settings.gradle 
+### 多项目构建中的 settings.gradle 
 
 ```
 settings.gradle
@@ -267,13 +268,11 @@ settings.gradle
 include "shared", "api", "services:webservice", "services:shared"
 ```
 			
-了解更多可参阅第 56 章，多项目构建。
-
 ### 公共配置
 
 对多项目构建而言，总有一些共同的配置.在本例中，我们会在根项目上采用配置注入的方式定义一些公共配置。根项目就像一个容器，子项目会迭代访问它的配置并注入到自己的配置中。这样我们就可以简单的为所有工程定义主配置单了：
 
-### 例 7.12. 多项目构建-公共配置
+### 多项目构建-公共配置
 
 ```
 build.gradle
@@ -300,9 +299,9 @@ subprojects {
 
 ### 工程依赖
 
-同一个构建中可以建立工程依赖，一个工程的 jar 包可以提供给另外一个工程使用。例如我们可以让  api 工程以依赖于 shared 工程的 jar 包。这样 Gradle 在构建 api 之前总是会先构建 shared 工程。
+同一个构建中可以建立工程依赖，一个工程的 jar 包可以提供给另外一个工程使用。例如我们可以让 api 工程以依赖于 shared 工程的 jar 包。这样 Gradle 在构建 api 之前总是会先构建 shared 工程。
 
-### 例 7.13. 多项目构建-工程依赖
+### 多项目构建-工程依赖
 
 ```
 api/build.gradle
@@ -314,13 +313,11 @@ dependencies {
 }
 ```
 
-参阅 56.7.1 小节，“停用项目依赖”来了解如何停用此功能。
-
 ### 打包发布
 
 如何发布，请看下文:
 
-### 例 7.14. 多项目构建-发布
+### 多项目构建-发布
 
 ```
 api/build.gradle
@@ -342,6 +339,6 @@ artifacts {
 
 ## 下一步目标?
 
-本章中，我们了解了如何构建一个基本 Java 工程。但这都是一小部分基础，用 Gradle 还可以做很多事。关于 Java 插件想了解更多可参阅第 23 章，The Java Plugin，并且你可以在 Gradle 发行包中的 samples/java 目录找到更多例子。
+本章中，我们了解了如何构建一个基本 Java 工程。但这都是一小部分基础，用 Gradle 还可以做很多事。关于 了解更多可参阅 [Java 插件](java-package.md)，The Java Plugin，并且你可以在 Gradle 发行包中的 samples/java 目录找到更多例子。
 
-另外，不要忘了继续阅读第 8 章， 依赖管理基础内容哟~~~
+另外，不要忘了继续阅读[依赖管理基础内容](dependency-management-basics.md)
