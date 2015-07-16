@@ -10,7 +10,7 @@
 - [Gradle 命令行的基本使用](using-the-gradle-command-line.md)
 - [使用 Gradle 图形用户界面](gui.md)
 - [编写构建脚本](build-script.md)
-- [教程 - 杂七杂八](clutter.md)
+- [教程-杂七杂八](clutter.md)
 - [任务详述](detailed-task.md)
 - [使用文件](file-use.md)
 - [从 Gradle 中调用 Ant](invoke-ant.md)

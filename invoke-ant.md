@@ -17,7 +17,7 @@ Ant 的第二层是其丰富的 Ant 任务和类型，如 javac、copy 或 jar�
 通过调用 AntBuilder实例上的一个方法，可以执行一个 Ant 任务。你可以把任务名称当作方法名称使用。例如，你可以通过调用ant.echo()方法执行 Ant 的 echo 任务。Ant 任务的属性会作为 Map 参数传给该方法。下面是执行 echo 任务的例子。请注意我们还可以混合使用 Groovy 代码和 Ant 任务标记。这将会非常强大。
 
 
-**示例 17.1. 使用 Ant 任务**
+** 使用 Ant 任务**
 
 build.gradle   
   
@@ -38,7 +38,7 @@ Total time: 1 secs
 
 你可以把一个嵌套文本，通过作为任务方法调用的参数，把它传给一个 Ant 任务。在此示例中，我们将把作为嵌套文本的消息传给 echo 任务：
 
-**示例 17.2. 向 Ant 任务传入嵌套文本**
+**向 Ant 任务传入嵌套文本**
 
 build.gradle  
   
@@ -58,7 +58,7 @@ Total time: 1 secs
 
 你可以在一个闭包里把嵌套的元素传给一个 Ant 任务。嵌套元素的定义方式与任务相同，通过调用与我们要定义的元素一样的名字的方法。
 
-**示例 17.3. 向 Ant 任务传入嵌套元素**
+**向 Ant 任务传入嵌套元素**
 
 build.gradle   
   
@@ -75,7 +75,7 @@ task zip << {
 
 您可以用访问任务同样的方法，把类型名字作为方法名称，访问 Ant 类型。方法调用返回 Ant 数据类型，然后可以在构建脚本中直接使用。在以下示例中，我们创建一个 Ant 的 path 对象，然后循环访问它的内容。
 
-**示例 17.4. 使用 Ant 类型**
+**使用 Ant 类型**
 
 build.gradle  
   
@@ -96,7 +96,7 @@ task list << {
 
 要使自定义任务在您的构建中可用，你可以使用Ant 任务 taskdef（通常更容易） 或typedef，就像在 build.xml 文件中一样。然后，您可以像引用内置的 Ant 任务一样引用自定义 Ant 任务。
 
-**示例 17.5. 使用自定义 Ant 任务**
+**使用自定义 Ant 任务**
 
 build.gradle  
   
@@ -115,7 +115,7 @@ task check << {
 
 你可以使用 Gradle 的依赖管理组合类路径，以用于自定义任务。要做到这一点，你需要定义一个自定义配置的类路径中，然后将一些依赖项添加到配置中。这在 50.4章节，“如何声明你的依赖关系”有更详细的描述。
 
-**示例 17.6. 声明用于自定义 Ant 任务的类路径**
+**声明用于自定义 Ant 任务的类路径**
 
 build.gradle  
   
@@ -130,7 +130,7 @@ dependencies {
 
 若要使用类路径配置，请使用自定义配置里的 asPath 属性。
 
-**示例 17.7. 同时使用自定义 Ant 任务和依赖管理**
+**同时使用自定义 Ant 任务和依赖管理**
 
 build.gradle  
   
@@ -148,7 +148,7 @@ task check << {
 
 你可以使用 ant.importBuild()方法来向 Gradle 项目导入一个 Ant 构建。当您导入一个 Ant 构建时，每个 Ant 目标被视为一个 Gradle 任务。这意味着你可以用与 Gradle 任务完全相机的方式操纵和执行 Ant 目标。
 
-**示例 17.8. 导入 Ant 构建**
+**导入 Ant 构建**
 
 build.gradle  
   
@@ -172,7 +172,7 @@ Total time: 1 secs
 
 您可以添加一个依赖于 Ant 目标的任务：
 
-**示例 17.9. 依赖于 Ant 目标的任务**
+**依赖于 Ant 目标的任务**
 
 build.gradle   
   
@@ -195,7 +195,7 @@ Total time: 1 secs
 
 或者，您可以将行为添加到 Ant 目标中：  
 
-**示例 17.10. 将行为添加到 Ant 目标**
+**将行为添加到 Ant 目标**
 
 build.gradle  
   
@@ -217,7 +217,7 @@ Total time: 1 secs
 
 它也可以用于一个依赖于 Gradle 任务的 Ant 目标：
 
-**示例 17.11. 依赖于 Gradle 任务的 Ant 目标**
+**依赖于 Gradle 任务的 Ant 目标**
 
 build.gradle  
   
@@ -248,7 +248,7 @@ Total time: 1 secs
 
 有几种方法来设置 Ant 属性，以便使该属性被 Ant 任务使用。你可以直接在 AntBuilder 实例上设置属性。Ant 属性也可以从一个你可以修改的 Map 中获得。您还可以使用 Ant property 任务。下面是一些如何做到这一点的例子。
 
-**示例 17.12. Ant 属性设置**
+**Ant 属性设置**
 
 build.gradle  
   
@@ -263,7 +263,7 @@ build.xml
 
 许多 Ant 任务在执行时会设置一些属性。有几种方法来获取这些属性值。你可以直接从AntBuilder 实例获得属性。Ant 属性也可作为一个 Map。下面是一些例子。
 
-**示例 17.13. 获取 Ant 属性**
+**获取 Ant 属性**
 
 build.xml  
   
@@ -277,7 +277,7 @@ println ant.properties['antProp']
 
 有几种方法可以设置 Ant 引用：
 
-**示例 17.14. Ant 引用设置**
+**Ant 引用设置**
 
 build.gradle  
   
@@ -291,7 +291,7 @@ build.xml
 
 有几种方法可以获取 Ant 引用：
 
-**示例 17.15. 获取 Ant 引用**
+**获取 Ant 引用**
 
 build.xml  
   
