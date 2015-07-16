@@ -147,7 +147,7 @@ taskY
 taskX
 ```
 
-可以看到，taskX 是 在 taskY 之前定义的，这在多项目构建中非常有用。关于任务依赖的更多信息可以查看章节 15.4,，“给任务添加依赖”。
+可以看到，taskX 是 在 taskY 之前定义的，这在多项目构建中非常有用。关于任务依赖的更多信息可以查看章节 15.4，“给任务添加依赖”。
 
 注意:当引用的任务尚未定义的时候不可使用短标记法(看章节 6.8， “短标记法”) 来运行任务。
 
@@ -468,4 +468,4 @@ whenReady 会在已发布的任务之前影响到已发布任务的执行。即�
 
 另外，可以目录继续学习第七章，Java 快速入门和第八章，依赖管理基础。
 
-[2]附录中有命令可以更改这种默认行为。请参阅附录 [D, Gradle](http://gradledoc.qiniudn.com/1.12/userguide/gradle_command_line.html) 命令行。
+[2]附录中有命令可以更改这种默认行为。请参阅附录 [D，Gradle](http://gradledoc.qiniudn.com/1.12/userguide/gradle_command_line.html) 命令行。
