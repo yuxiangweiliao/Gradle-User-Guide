@@ -18,8 +18,9 @@ projects 和 tasks是 Gradle 中最重要的两个概念。
 
 ### 第一个构建脚本
 
-```
 build.gradle
+
+```
 task hello {
     doLast {
         println 'Hello world!'
@@ -51,8 +52,9 @@ Hello world!
 
 ### 快速定义任务
 
-```
 build.gradle
+
+```
 task hello << {
     println 'Hello world!'
 }
@@ -66,8 +68,9 @@ Gradle 脚本采用 Groovy 书写，作为开胃菜,看下下面这个例子。
 
 ### 在 gradle 任务中采用 groovy
 
-```
 build.gradle
+
+```
 task upper << {
     String someString = 'mY_nAmE'
     println "Original: " + someString
@@ -83,8 +86,9 @@ Upper case: MY_NAME
 
 ### 在 gradle 任务中采用 groovy
 
-```
 build.gradle
+
+```
 task count << {
     4.times { print "$it " }
 }
@@ -99,9 +103,7 @@ Output of gradle -q count
 
 ### 在两个任务之间指明依赖关系
 
-```
 build.gradle
-```
 
 ```
 task hello << {
@@ -125,9 +127,7 @@ I'm Gradle
 
 ## 延迟依赖 
 
-```
 build.gradle
-```
 
 ```
 task taskX(dependsOn: 'taskY') << {
@@ -156,9 +156,7 @@ taskX
 
 ### 创建动态任务
 
-```
 build.gradle
-```
 
 ```
 4.times { counter ->
@@ -180,11 +178,9 @@ I'm task number 1
 
 一旦任务被创建后，任务之间可以通过 API 进行相互访问。这也是与 Ant 的不同之处。比如可以增加一些依赖。
 
-### 通过 API进行任务之间的通信 - 增加依赖
+### 通过 API 进行任务之间的通信 - 增加依赖
 
-```
 build.gradle
-```
 
 ```
 4.times { counter ->
@@ -209,9 +205,7 @@ I'm task number 0
 
 ### 通过 API 进行任务之间的通信 - 增加任务行为
 
-```
 build.gradle
-```
 
 ```
 task hello << {
@@ -243,9 +237,7 @@ doFirst 和 doLast 可以进行多次调用。他们分别被添加在任务的�
 
 ### 以属性的方式访问任务
 
-```
 build.gradle
-```
 
 ```
 task hello << {
@@ -271,12 +263,9 @@ Greetings from the hello task.
 
 你可以为一个任务添加额外的属性。例如,新增一个叫做 myProperty 的属性，用 ext.myProperty 的方式给他一个初始值。这样便增加了一个自定义属性。
 
-
 ### 为任务增加自定义属性
 
-```
 build.gradle
-```
 
 ```
 task myTask {
@@ -304,9 +293,7 @@ Ant 任务是 Gradle 中的一等公民。Gradle 借助 Groovy 对 Ant 任务进
 
 ### 利用 AntBuilder 执行 ant.loadfile 
 
-```
 build.gradle
-```
 
 ```
 task loadfile << {
@@ -338,16 +325,13 @@ Make the impossible possible, make the possible easy and make the easy elegant.
 
 在你脚本里还可以利用 Ant 做更多的事情。想了解更多请参阅[在 Gradle 中调用 Ant](invoke-ant-seventeen.md)。
 
-
 ## 方法抽取
 
 Gradle 的强大要看你如何编写脚本逻辑。针对上面的例子，首先要做的就是要抽取方法。
 
 ### 利用方法组织脚本逻辑
 
-```
 build.gradle
-```
 
 ```
 task checksum << {
@@ -385,9 +369,7 @@ Gradle 允许在脚本中定义多个默认任务。
 
 ## 定义默认任务
 
-```
 build.gradle
-```
 
 ```
 defaultTasks 'clean', 'run'
@@ -421,9 +403,7 @@ Default Running!
 
 ### 依赖任务的不同输出
 
-```
 build.gradle
-```
 
 ```
 task distribution << {

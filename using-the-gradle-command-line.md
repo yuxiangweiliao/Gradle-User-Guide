@@ -14,9 +14,7 @@
 
 ### 多任务调用
 
-```
 build.gradle
-```
 
 ```
 task compile << {
@@ -125,9 +123,7 @@ Total time: 1 secs
 
 ### 选择文件构建
 
-```
 subdir/myproject.gradle
-```
 
 ```
 task hello << {
@@ -184,9 +180,7 @@ For example, try running gradle :api:tasks
 
 ### 为项目添加描述信息.
 
-```
 build.gradle
-```
 
 ```
 description = 'The shared API for the application'
@@ -230,9 +224,7 @@ To see all tasks and more detail, run with --all.
 
 ### 更改任务报告内容
 
-```
 build.gradle
-```
 
 ```
 dists {

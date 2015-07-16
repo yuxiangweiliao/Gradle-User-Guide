@@ -8,9 +8,9 @@
 
 **定义任务**
 
-```
 build.gradle  
 
+```
 task(hello) << {
     println "hello"
 }
@@ -24,10 +24,9 @@ task(copy, type: Copy) {
 
 **定义任务 — — 使用字符串作为任务名称**
 
-```
 build.gradle  
   
-
+```
 task('hello') <<
 {
     println "hello"
@@ -42,10 +41,9 @@ task('copy', type: Copy) {
 
 **使用替代语法定义任务**
 
-```
 build.gradle  
   
-
+```
 tasks.create(name: 'hello') << {
     println "hello"
 }
@@ -63,10 +61,9 @@ tasks.create(name: 'copy', type: Copy) {
 
 **以属性方式访问任务**
 
-```
 build.gradle  
   
-
+```
 task hello
 println hello.name
 println project.hello.name  
@@ -76,10 +73,9 @@ println project.hello.name
 
 **通过 tasks 集合访问任务**
 
-```
 build.gradle  
   
-
+```
 task hello
 println tasks.hello.name
 println tasks['hello'].name  
@@ -89,10 +85,9 @@ println tasks['hello'].name
 
 **通过路径访问任务**
 
-```
 build.gradle  
   
-
+```
 project(':projectA') {
     task hello
 }
@@ -121,10 +116,9 @@ gradle -q hello的输出结果
 
 **创建一个复制任务**
 
-```
 build.gradle  
   
-
+```
 task myCopy(type: Copy)  
 ```  
 
@@ -180,10 +174,9 @@ task copy(type: Copy) {
 
 **从另一个项目的任务上添加依赖** 
 
-```
 build.gradle  
  
-
+```
 project('projectA') {
     task taskX(dependsOn: ':projectB:taskY') << {
         println 'taskX'
@@ -208,10 +201,9 @@ taskX
 
 **使用 task 对象添加依赖**
 
-```
 build.gradle  
   
-
+```
 task taskX << {
     println 'taskX'
 }
@@ -233,10 +225,9 @@ taskX
 
 **使用闭包添加依赖**
 
-```
 build.gradle  
   
-
+```
 task taskX << {
     println 'taskX'
 }
@@ -286,10 +277,9 @@ taskX
 
 **添加 '必须在之后运行 ' 的任务排序**
 
-```
 build.gradle  
   
-
+```
 task taskX << {
     println 'taskX'
 }
@@ -309,10 +299,9 @@ taskY
 
 **添加 '应该在之后运行 ' 的任务排序**
 
-```
 build.gradle  
   
-
+```
 task taskX << {
     println 'taskX'
 }
@@ -352,10 +341,9 @@ taskY
 
 **当引入循环时，“应该在其之后运行”的任务排序会被忽略**
 
-```
 build.gradle  
   
-
+```
 task taskX << {
     println 'taskX'
 }
@@ -385,10 +373,9 @@ taskX
 
 **向任务添加描述**
 
-```
 build.gradle  
   
-
+```
 task copy(type: Copy) {
    description 'Copies the resource directory to the target directory.'
    from 'resources'
@@ -403,10 +390,9 @@ task copy(type: Copy) {
 
 **重写任务**
 
-```
 build.gradle  
            
-
+```
 task copy(type: Copy)
 task copy(overwrite: true) << {
     println('I am the new one.')
@@ -432,10 +418,9 @@ Gradle 提供多种方式来跳过任务的执行。
 
 **使用断言跳过一个任务**
 
-```
 build.gradle  
   
-
+```
 task hello << {
     println 'hello world'
 }
@@ -457,10 +442,9 @@ Total time: 1 secs
 
 **使用 StopExecutionException 跳过任务**
 
-```
 build.gradle  
   
-
+```
 task compile << {
     println 'We are doing the compile.'
 }
@@ -488,10 +472,9 @@ I am not affected
 
 **启用和禁用任务**
 
-```
 build.gradle  
   
-
+```
 task disableMe << {
     println 'This should not be printed if the task is disabled.'
 }
@@ -517,10 +500,9 @@ Total time: 1 secs
 
 **一个生成任务**
 
-```
 build.gradle  
   
-
+```
 task transform {
     ext.srcFile = file('mountains.xml')
     ext.destDir = new File(buildDir, 'generated')
@@ -559,10 +541,10 @@ Transforming source file.
 每个任务都有一个 inputs 和 outputs 的属性，用来声明任务的输入和输出。下面，我们修改了我们的示例，声明它将 XML 源文件作为输入，并产生输出到一个目标目录。让我们运行它几次。
 
 **声明一个任务的输入和输出**
+
+build.gradle
   
 ```
-build.gradle  
-
 task transform {
     ext.srcFile = file('mountains.xml')
     ext.destDir = new File(buildDir, 'generated')
@@ -619,10 +601,9 @@ gradle transform 的输出结果
 
 **任务规则**
 
-```
 build.gradle  
   
-
+```
 tasks.addRule("Pattern: ping<ID>") { String taskName ->
     if (taskName.startsWith("ping")) {
         task(taskName) << {
@@ -645,10 +626,9 @@ Pinging: Server1
 
 **基于规则的任务依赖**
 
-```
 build.gradle  
   
-
+```
 tasks.addRule("Pattern: ping<ID>") { String taskName ->
     if (taskName.startsWith("ping")) {
         task(taskName) << {
@@ -675,10 +655,9 @@ Pinging: Server2
 
 **添加一个析构器任务**
 
-```
 build.gradle  
 
-
+```
 task taskX << {
     println 'taskX'
 }
@@ -700,10 +679,9 @@ taskY
 
 **执行失败的任务的任务析构器**
 
-```
 build.gradle  
   
-
+```
 task taskX << {
     println 'taskX'
     throw new RuntimeException()

@@ -8,9 +8,7 @@
 
 ### War plugin
 
-```
 build.gradle
-```
 
 ```
 apply plugin: 'war'
@@ -30,9 +28,7 @@ apply plugin: 'war'
 
 ### 采用 Jetty plugin 启动 web 工程
 
-```
 build.gradle
-```
 
 ```
 apply plugin: 'jetty'

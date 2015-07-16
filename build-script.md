@@ -17,10 +17,9 @@ Gradle 提供一种领域特定语言或者说是 DSL，来描述构建。这种
 
 **访问 Project 对象的属性**
 
-```
 build.gradle  
   
-
+```
 println name
 println project.name  
 ```  
@@ -238,10 +237,10 @@ getProject().setBuildDir('target')
 调用方法时括号是可选的。
 
 **不带括号的方法调用**
-  
-```
+
 build.gradle  
 
+```
 test.systemProperty 'some.prop', 'value'
 test.systemProperty('some.prop', 'value')  
 ```  
@@ -252,10 +251,9 @@ Groovy 提供了一些定义 List 和 Map 实例的快捷写法。
 
 **List and map**
 
-```
 build.gradle  
   
-
+```
 // List literal
 test.includes = ['org/gradle/api/**', 'org/gradle/internal/**']
 List<String> list = new ArrayList<String>()
@@ -275,10 +273,9 @@ Gradle DSL 在很多地方使用闭包。你可以在这里查看更多有关闭
 
 **作为方法参数的闭包**
 
-```
 build.gradle  
   
-
+```
 repositories {
     println "in a closure"
 }
@@ -292,10 +289,9 @@ repositories({ println "in a closure" })
 
 **闭包委托**
 
-```
 build.gradle  
   
-
+```
 dependencies {
     assert delegate == project.dependencies
     compile('junit:junit:4.11')

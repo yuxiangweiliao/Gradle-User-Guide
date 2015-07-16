@@ -22,9 +22,7 @@
 
 ### 声明依赖 
 
-```
 build.gradle
-```
 
 ```
 apply plugin: 'java'
@@ -71,9 +69,7 @@ runtime 依赖在运行和测试系统的时候需要，但在编译的时候不
 
 ### 定义外部依赖
 
-```
 build.gradle
-```
 
 ```
 dependencies {
@@ -87,9 +83,7 @@ dependencies {
 
 ### 快速定义外部依赖
 
-```
 build.gradle
-```
 
 ```
 dependencies {
@@ -105,9 +99,7 @@ Gradle 是在一个被称之为*仓库*的地方找寻所需的外部依赖。�
 
 ### 使用 Maven 中央仓库
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -119,9 +111,7 @@ repositories {
 
 ### 使用 Maven 远程仓库
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -135,9 +125,7 @@ repositories {
 
 ### 采用 Ivy 远程仓库
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -151,9 +139,7 @@ repositories {
 
 ### 采用本地 Ivy 目录
 
-```
 build.gradle
-```
 
 ```
 repositories {
@@ -176,9 +162,7 @@ repositories {
 
 ### 发布到 Ivy 仓库
 
-```
 build.gradle
-```
 
 ```
 uploadArchives {
@@ -202,9 +186,7 @@ p.s：发布到 Maven 仓库你需要 Maven 插件的支持，当然，Gradle �
 
 ### 发布到 Maven 仓库
 
-```
 build.gradle
-```
 
 ```
 apply plugin: 'maven'

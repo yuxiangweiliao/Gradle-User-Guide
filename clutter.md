@@ -6,10 +6,9 @@
 
 **使用 mkdir 创建目录**
 
-```
 build.gradle  
   
-
+```
 classesDir = new File('build/classes')
 task resources << {
     classesDir.mkdirs()
@@ -139,10 +138,9 @@ gradle -q configure 的输出结果
 
 **使用脚本配置任意对象**
 
-```
 build.gradle  
   
-
+```
 task configure << {
     pos = new java.text.FieldPosition(10)
     // Apply the script
@@ -152,10 +150,9 @@ task configure << {
 }  
 ```  
 
-```
 other.gradle  
   
-
+```
 beginIndex = 1;
 endIndex = 5;  
 ```  

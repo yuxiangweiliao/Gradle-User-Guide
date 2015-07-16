@@ -8,9 +8,9 @@
 
 例子 Groovy plugin
 
-```
 build.gradle  
-  
+
+```
 apply plugin: 'groovy'   
 ```  
 
@@ -22,10 +22,9 @@ apply plugin: 'groovy'
 
 例子 Dependency on Groovy 2.2.0
 
-```
 build.gradle  
   
-
+```
 repositories {
     mavenCentral()
 }
@@ -38,10 +37,9 @@ dependencies {
 
 例子 Groovy example - complete build file
 
-```
 build.gradle  
   
-
+```
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
 repositories {
@@ -57,6 +55,6 @@ dependencies {
 
 ## 总结  
 
-这一章描述了一个很简单的 Groovy 项目。通常情况下，一个真实的项目所需要的不止于此。因为一个 Groovy 项目也 是 一个 Java 项目， 由于 Groovy 工程也是一个 Java 工程，因此你能用 Java 做的事情 Groovy 也能做。  
+这一章描述了一个很简单的 Groovy 项目。通常情况下，一个真实的项目所需要的不止于此。因为一个 Groovy 项目也 是一个 Java 项目， 由于 Groovy 工程也是一个 Java 工程，因此你能用 Java 做的事情 Groovy 也能做。  
 
 你可以参阅 [Groovy 插件](package.md) 去了解更多关于 Groovy 插件的内容，或在 Gradle 发行包的 samples/groovy 目录中找到更多的 Groovy 项目示例。
