@@ -6,7 +6,7 @@
 
 你可以使用 Project.file()方法来找到一个相对于项目目录的文件 。
 
-**示例 16.1. 查找文件**
+**查找文件**
 
 build.gradle  
   
@@ -19,7 +19,7 @@ configFile = file(configFile.absolutePath)
 configFile = file(new File('src/config.xml'))  
 ``` 
 
-您可以把任何对象传递给 file()方法，而它将尝试将其转换为一个绝对路径的 File 对象。通常情况下，你会传给它一个 String 或 File 的实例。而所提供的这个对象的 tostring()方法的值会作为文件路径。如果这个路径是一个绝对路径，它会用于构构一个 File 实例。否则，会通过先计算所提供的路径相对于项目目录的相对路径来构造 File 实例。这个 file()方法也可以识别URL，例如是 file:/some/path.xml。
+您可以把任何对象传递给 file()方法，而它将尝试将其转换为一个绝对路径的 File 对象。通常情况下，你会传给它一个 String 或 File 的实例。而所提供的这个对象的 tostring() 方法的值会作为文件路径。如果这个路径是一个绝对路径，它会用于构构一个 File 实例。否则，会通过先计算所提供的路径相对于项目目录的相对路径来构造 File 实例。这个 file()方法也可以识别URL，例如是 `file:/some/path.xml`。
 
 这是把一些用户提供的值转换为一个相对路径的 File 对象的有用方法。由于 file()方法总是去计算所提供的路径相对于项目目录的路径，最好是使用 new File(somePath)，因为它是一个固定的路径，而不会因为用户运行 Gradle 的具体工作目录而改变。
 
@@ -27,9 +27,9 @@ configFile = file(new File('src/config.xml'))
 
 一个文件集合只是表示一组文件。它通过 FileCollection 接口来表示。Gradle API 中的许多对象都实现了此接口。比如，依赖配置 就实现了 FileCollection 这一接口。
 
-使用 Project.files()方法是获取一个 FileCollection 实例的其中一个方法。你可以向这个方法传入任意个对象，而它们会被转换为一组 File 对象。这个 Files()方法接受任何类型的对象作为其参数。根据16.1 章节 “定位文件”里对 file()方法的描述，它的结果会被计算为相对于项目目录的相对路径。你也可以将集合，迭代变量，map 和数组传递给 files()方法。它们会被展开，并且内容会转换为 File 实例。
+使用 Project.files()方法是获取一个 FileCollection 实例的其中一个方法。你可以向这个方法传入任意个对象，而它们会被转换为一组 File 对象。这个 Files() 方法接受任何类型的对象作为其参数。根据16.1 章节 “定位文件”里对 file() 方法的描述，它的结果会被计算为相对于项目目录的相对路径。你也可以将集合，迭代变量，map 和数组传递给 files() 方法。它们会被展开，并且内容会转换为 File 实例。
 
-**示例 16.2. 创建一个文件集合**
+**创建一个文件集合**
 
 build.gradle  
   
@@ -39,9 +39,10 @@ FileCollection collection = files('src/file1.txt', new File('src/file2.txt'), ['
 
 一个文件集合是可迭代的，并且可以使用 as 操作符转换为其他类型的对象集合。您还可以使用+运算符把两个文件集合相加，或使用-运算符减去一个文件集合。这里是一些使用文件集合的例子。
 
-**示例 16.3. 使用一个文件集合**
+**使用一个文件集合**
 
 build.gradle  
+
 ```
 // Iterate over the files in the collection
 collection.each {File file ->
@@ -59,9 +60,9 @@ def union = collection + files('src/file3.txt')
 def different = collection - files('src/file3.txt')  
 ```  
 
-你也可以向 files()方法传一个闭包或一个 Callable 实例。它会在查询集合内容，并且它的返回值被转换为一组文件实例时被调用。这个闭包或 Callable 实例的返回值可以是 files()方法所支持的任何类型的对象。这是 “实现” FileCollection 接口的简单方法。
+你也可以向 files()方法传一个闭包或一个 Callable 实例。它会在查询集合内容，并且它的返回值被转换为一组文件实例时被调用。这个闭包或 Callable 实例的返回值可以是 files() 方法所支持的任何类型的对象。这是 “实现” FileCollection 接口的简单方法。
 
-**示例 16.4. 实现一个文件集合**
+**实现一个文件集合**
 
 build.gradle  
   
@@ -79,8 +80,9 @@ task list << {
 }  
 ```  
 
-gradle -q list的输出结果  
+gradle -q list 的输出结果  
 
+```
 > gradle -q list
 Contents of src
 src/dir1
@@ -88,8 +90,9 @@ src/file1.txt
 Contents of src2
 src2/dir1
 src2/dir2  
+```
 
-你可以向 files()传入一些其他类型的对象：
+你可以向 files() 传入一些其他类型的对象：
 
 **FileCollection**
 
@@ -111,7 +114,7 @@ TaskOutputs 的输出文件会被包含在文件集合内。
 
 使用 Project.fileTree()方法是获取一个 FileTree 实例的其中一种方法。它将定义一个基目录创建 FileTree 对象，并可以选择加上一些 Ant 风格的包含与排除模式。
 
-**示例 16.5. 创建一个文件树**
+**创建一个文件树**
 
 build.gradle  
   
@@ -135,10 +138,10 @@ tree = fileTree(dir: 'src', include: '**/*.java', exclude: '**/*test*/**')
 
 你可以像使用一个文件集合的方式一样来使用一个文件树。你也可以使用 Ant 风格的模式来访问文件树的内容或选择一个子树：
 
-**示例 16.6. 使用文件树**
+**使用文件树**
 
-build.gradle  
-  
+build.gradle 
+ 
 ```
 // Iterate over the contents of a tree
 tree.each {File file ->
@@ -158,9 +161,10 @@ tree.visit {element ->
 
 ## 使用归档文件的内容作为文件树  
 
-您可以使用档案的内容，如 ZIP 或者 TAR 文件，作为一个文件树。你可以通过使用Project.zipTree()或 Project.tarTree()方法来实现这一过程。这些方法返回一个 FileTree 实例，您可以像使用任何其他文件树或文件集合一样使用它。例如，您可以用它来通过复制内容扩大归档，或把一些档案合并到另一个归档文件中。
+您可以使用档案的内容，如 ZIP 或者 TAR 文件，作为一个文件树。你可以通过使用 Project.zipTree() 或  Project.tarTree()方法来实现这一过程。这些方法返回一个 FileTree 实例，您可以像使用任何其他文件树或文件集合一样使用它。例如，您可以用它来通过复制内容扩大归档，或把一些档案合并到另一个归档文件中。
 
-**示例 16.7. 使用归档文件作为文件树**
+**使用归档文件作为文件树**
+
 
 build.gradle  
   
@@ -176,9 +180,10 @@ FileTree someTar = tarTree(resources.gzip('someTar.ext'))
 
 ## 指定一组输入文件  
 
-Gradle 中的许多对象都有一个接受一组输入文件的属性。例如，JavaCompile 任务有一个source 属性，定义了要编译的源代码文件。你可以使用上面所示的 files()方法所支持的任意类型的对象设置此属性。这意味着您可以通过如 File、String、 集合、 FileCollection 对象，或甚至是一个闭包来设置此属性。这里有一些例子：
+Gradle 中的许多对象都有一个接受一组输入文件的属性。例如，JavaCompile 任务有一个 source 属性，定义了要编译的源代码文件。你可以使用上面所示的 files()方法所支持的任意类型的对象设置此属性。这意味着您可以通过如 File、String、集合、FileCollection 对象，或甚至是一个闭包来设置此属性。这里有一些例子：
 
-**示例 16.8. 指定一组文件**
+**指定一组文件**
+
 
 build.gradle  
   
@@ -210,7 +215,8 @@ compile {
 
 通常情况下，有一个与属性相同名称的方法，可以追加这个文件集合。再者，这个方法接受 files()方法所支持的任何类型的参数。
 
-**示例 16.9. 指定一组文件**
+**指定一组文件**
+
 
 build.gradle  
   
@@ -231,7 +237,8 @@ compile {
 
 若要使用 Copy 任务，您必须提供用于复制的源文件和目标目录。您还可以在复制文件的时候指定如何转换文件。你可以使用一个复制规范来做这些。一个复制规范通过 CopySpec 接口来表示。Copy 任务实现了此接口。你可以使用 CopySpec.from()方法指定源文件，使用 CopySpec.into()方法使用目标目录。
 
-**示例 16.10. 使用copy任务复制文件**
+**使用 copy 任务复制文件**
+
 
 build.gradle  
    
@@ -242,7 +249,7 @@ task copyTask(type: Copy) {
 }  
 ```  
 
-from()方法接受和 files()方法一样的任何参数。当参数解析为一个目录时，该目录下的所有文件（不包含目录本身） 都会递归复制到目标目录。当参数解析为一个文件时，该文件会复制到目标目录中。当参数解析为一个不存在的文件时，参数会被忽略。如果参数是一个任务，那么任务的输出文件 （即该任务创建的文件）会被复制，并且该任务会自动添加为 Copy 任务的依赖项。into()方法接受和files()方法一样的任何参数。这里是另一个示例：
+from() 方法接受和 files() 方法一样的任何参数。当参数解析为一个目录时，该目录下的所有文件（不包含目录本身） 都会递归复制到目标目录。当参数解析为一个文件时，该文件会复制到目标目录中。当参数解析为一个不存在的文件时，参数会被忽略。如果参数是一个任务，那么任务的输出文件 （即该任务创建的文件）会被复制，并且该任务会自动添加为 Copy 任务的依赖项。into() 方法接受和 files() 方法一样的任何参数。这里是另一个示例：
 
 **示例 16.11. 指定复制任务的源文件和目标目录**
 

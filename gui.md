@@ -2,7 +2,7 @@
   
 除了支持传统的命令行界面，Gradle 也提供了一个图形用户界面（GUI）。这是一个独立的用户界面，可以通过加上 **--gui** 参数来启动。
 
-Example 12.1. Launching the GUI
+### Launching the GUI
   
 ```
 gradle --gui  
@@ -12,13 +12,13 @@ gradle --gui
 
 如果你在你的 Gradle 项目目录下运行 Gradle GUI，你应该会看到一个任务树。
 
-**Figure 12.1. GUI Task Tree**
+**GUI Task Tree**
   
 ![](images/01.png)
 
 最好是从 Gradle 项目目录运行此命令，这样对 UI 的设置就可以存储在你的项目目录中。当然，你也可以先运行它，然后通过在 UI 中的设置（Setup）选项卡，改变工作目录。
 
-在 Gradle 的用户界面（UI）中，上面是4个选项卡，下面则是输出窗口。
+在 Gradle 的用户界面（UI）中，上面是 4 个选项卡，下面则是输出窗口。
 
 ## 任务树  
 
@@ -28,7 +28,7 @@ gradle --gui
 
 任务树的上下文菜单会提供以下选项：
 
-- 执行忽略依赖关系。这使得重新构建时不去依赖项目（与-a选项一样）
+- 执行忽略依赖关系。这使得重新构建时不去依赖项目（与 -a 选项一样）
 - 将任务添加到收藏夹（见收藏夹（Favourites）选项卡）
 - 隐藏选择的任务。这将会把它们添加到过滤器中。
 - 编辑 build.gradle 文件。注意：该操作需要 Java 1.6 或更高的版本，并且要求在你的操作系统中关联 gradle 文件。  
@@ -47,7 +47,7 @@ gradle --gui
 
 设置（Setup）选项卡允许你配置一些常规的设置
 
-**Figure 12.2. GUI Setup**
+**GUI Setup**
 
 ![](images/02.png)
 

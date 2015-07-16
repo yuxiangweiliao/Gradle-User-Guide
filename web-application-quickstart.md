@@ -6,7 +6,7 @@
 
 需要打包 War 文件，需要在脚本中使用 War plugin：
 
-### 例 10.1. War plugin
+### War plugin
 
 ```
 build.gradle
@@ -18,7 +18,7 @@ apply plugin: 'war'
 
 备注：本示例代码可以在 Gradle 发行包中的 samples/webApplication/quickstart 路径下找到。
 
-由于继承自 Java 插件，当你执行 **gradle build** 时，将会编译、测试、打包你的工程。Gradle 会在  src/main/webapp 下寻找 Web 工程文件。编译后的 classes 文件以及运行时依赖也都会被包含在 War 包中。
+由于继承自 Java 插件，当你执行 **gradle build** 时，将会编译、测试、打包你的工程。Gradle 会在  `src/main/webapp` 下寻找 Web 工程文件。编译后的 classes 文件以及运行时依赖也都会被包含在 War 包中。
 
 > Groovy web构建
 > 
@@ -28,7 +28,7 @@ apply plugin: 'war'
 
 要启动 Web 工程，只需使用 Jetty plugin 即可：
 
-### 例 10.2. 采用 Jetty plugin 启动 web 工程
+### 采用 Jetty plugin 启动 web 工程
 
 ```
 build.gradle
@@ -42,7 +42,4 @@ apply plugin: 'jetty'
 
 待添加：使用哪个 URL，配置端口，使用源文件的地方，可编辑你的文件，以及重新加载的内容。
 
-## 本章汇总
 
-
-了解更多关于 War plugin 和 Jetty plugin 的应用请参阅第 26 章，War Plugin 以及 第 28 章，Jetty Plugin。你可以在发行包的 samples/webApplication 下找到更多示例。
