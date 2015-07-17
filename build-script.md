@@ -38,7 +38,7 @@ projectApi
 
 Project对象提供了一些在构建脚本中可用的标准的属性。下表列出了常用的几个属性。
 
-**表 13.1. Project 属性**
+表 Project 属性
   
 <table>
 <tr >
@@ -53,7 +53,7 @@ Project对象提供了一些在构建脚本中可用的标准的属性。下表�
 <td>
 <code>project</code></td>
 <td>
-<a target="_blank" target="_blank" class="ulink" href="file:///E:/%E7%BF%BB%E8%AF%91/gradle/dsl/org.gradle.api.Project.html"><code>Project</code></a></td>
+<a  href="file:///E:/%E7%BF%BB%E8%AF%91/gradle/dsl/org.gradle.api.Project.html"><code>Project</code></a></td>
 <td>
 <code >Project</code>实例</td>
 </tr>
@@ -117,7 +117,7 @@ Project对象提供了一些在构建脚本中可用的标准的属性。下表�
 <td>
 <code>ant</code></td>
 <td>
-<a target="_blank" target="_blank" class="ulink" href="file:///E:/%E7%BF%BB%E8%AF%91/gradle/javadoc/org/gradle/api/AntBuilder.html" ><code>AntBuilder</code></a></td>
+<a  href="file:///E:/%E7%BF%BB%E8%AF%91/gradle/javadoc/org/gradle/api/AntBuilder.html" ><code>AntBuilder</code></a></td>
 <td >
 <code>AntBuilder</code>实例</td>
 </tr>
@@ -151,7 +151,7 @@ task copy(type: Copy) {
 
 Gradle 的域模型中，所有增强的对象都可以容纳用户定义的额外的属性。这包括但并不限于项目（project）、任务（task）和源码集（source set）。额外的属性可以通过所属对象的 ext 属性进行添加，读取和设置。或者，可以使用 ext 块同时添加多个属性。
 
-**13.3 例子. 使用额外属性**
+**例子 使用额外属性**
 
 build.gradle  
   
@@ -192,7 +192,7 @@ plugin
 
 在此示例中， 一个 ext 代码块将两个额外属性添加到 project 对象中。此外，通过将ext.purpose 设置为 null（null是一个允许的值），一个名为 purpose 的属性被添加到每个源码集（source set）。一旦属性被添加，他们就可以像预定的属性一样被读取和设置。
 
-通过添加属性所要求特殊的语法，Gradle 可以在你试图设置 （预定义的或额外的） 的属性，但该属性拼写错误或不存在时 fail fast。[5]额外属性在任何能够访问它们所属的对象的地方都可以被访问，这使它们有着比局部变量更广泛的作用域。父项目上的额外属性，在子项目中也可以访问。
+通过添加属性所要求特殊的语法，Gradle 可以在你试图设置 （预定义的或额外的） 的属性，但该属性拼写错误或不存在时 fail fast。[[5]](#footname)额外属性在任何能够访问它们所属的对象的地方都可以被访问，这使它们有着比局部变量更广泛的作用域。父项目上的额外属性，在子项目中也可以访问。
 
 有关额外属性和它们的 API 的详细信息，请参阅 ExtraPropertiesExtension。
 
@@ -298,3 +298,8 @@ dependencies {
     delegate.compile('junit:junit:4.11')
 }  
 ```
+
+
+----------
+<a name="footname">
+[5] </a>截至 Gradle 1.0-milestone-9 版本，我们鼓励但不强制要求使用 ext 来添加额外属性因此，当未知的属性被设置时，Gradle不会构建失败。然而，它将打印一个警告。

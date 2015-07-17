@@ -6,7 +6,7 @@ Jetty 插件继承自 War 插件，并添加一些任务，这些任务可以让
 
 要使用 Jetty 的插件，请在构建脚本中包含以下语句：
 
-**示例 28.1. 使用 Jetty 插件**
+**示例 使用 Jetty 插件**
 
 build.gradle  
   
@@ -18,7 +18,7 @@ apply plugin: 'jetty'
 
 Jetty 插件定义了以下任务：
 
-表 28.1. Jetty 插件 - 任务
+表 Jetty 插件 - 任务
 
 <table id="N1325B" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -67,7 +67,7 @@ Jetty 插件定义了以下任务：
 </tbody>
 </table>  
 
-图 28.1. Jetty 插件 - tasks
+图 Jetty 插件 - tasks
 
 ![](images/06.png)  
 
@@ -83,7 +83,7 @@ Jetty 插件并不定义任何依赖配置。
 
 Jetty 插件定义了下列公约属性：
 
-表 28.2. Jetty插件 - 属性
+表 Jetty插件 - 属性
 
 <table id="N132C4" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

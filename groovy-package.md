@@ -6,7 +6,7 @@ Groovy 的插件继承自 Java 插件并添加了对 Groovy 项目的支持。�
 
 要使用 Groovy 的插件，请在构建脚本中包含以下语句：
 
-**示例 24.1. 使用 Groovy 插件**
+**示例 使用 Groovy 插件**
 
 build.gradle  
   
@@ -79,7 +79,7 @@ Groovy 的插件向 project 中添加了以下任务。
 
 Groovy 的插件向 Java 插件所加入的 tasks 添加了以下的依赖。
 
-表 24.2. Groovy 插件 - 额外的task 依赖
+表 Groovy 插件 - 额外的task 依赖
 
 <table id="N12A68" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -112,7 +112,7 @@ compile<span class="replaceable" style="margin:0px; padding:0px; border:0px; fon
 </tbody>
 </table>  
 
-图 24.1. Groovy 插件 - tasks
+图 Groovy 插件 - tasks
   
 ![](images/03.png)
 
@@ -193,7 +193,7 @@ Test Groovy 源代码。此外可能包含联合编译的 Java 源代码。</td>
 
 和 Java 插件一样，Groovy 插件允许把 Groovy 的 production 和 test 的源文件配置为自定义的位置。
 
-**示例 24.2. 自定义 Groovy 自定义源文件布局**
+**示例 自定义 Groovy 自定义源文件布局**
 
 build.gradle  
   
@@ -218,7 +218,7 @@ sourceSets {
 
 如果 Groovy 用于 production 代码，Groovy 依赖应该添加到 compile 配置中：
 
-**示例 24.3. Groovy 的依赖配置**
+**示例 Groovy 的依赖配置**
   
 ```
 build.gradle
@@ -232,7 +232,7 @@ dependencies {
 
 如果 Groovy 仅用于测试代码，Groovy 的依赖应该被添加到 testCompile 配置中：
 
-**示例 24.4. 配置 Groovy 测试依赖**
+**示例 配置 Groovy 测试依赖**
 
 build.gradle  
   
@@ -244,7 +244,7 @@ dependencies {
 
 如果要使用 Gradle 所带的 Groovy 库，请声明 localGroovy()依赖。注意，不同 Gradle 版本附带的 Groovy 版本不同；因此，声明一个固定的 Groovy 依赖要比使用 localGroovy()更安全一些。
 
-**示例 24.5. 配置捆绑的 Groovy 依赖**
+**示例 配置捆绑的 Groovy 依赖**
 
 build.gradle  
   
@@ -256,7 +256,7 @@ dependencies {
 
 Groovy 库不一定得从远程仓库中获取。它也可以获取自本地中可能检入版本控制的 lib 目录：
 
-**示例 24.6. 配置Groovy 文件依赖**
+**示例 配置Groovy 文件依赖**
 
 build.gradle  
   
@@ -294,7 +294,7 @@ Groovy 的插件没有向 project 添加任何的常规属性。
 
 Groovy 的插件向 project 的每一个source set 添加了下列的常规属性。你可以在你的构建脚本中，把这些属性当成是 source set 对象中的属性一样使用 （见第 21.3，“公约”）。
 
-表 24.4. Groovy 插件 - source set 属性
+表 Groovy 插件 - source set 属性
   
 <table id="N12BC0" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -349,7 +349,7 @@ Groovy 的插件向 project 的每一个source set 添加了下列的常规属�
 
 Groovy 的插件还修改了一些 source set 的属性：
 
-表 24.5. Groovy 的插件 - source set 属性
+表 Groovy 的插件 - source set 属性
   
 <table id="N12C30" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -380,7 +380,7 @@ Groovy 的插件还修改了一些 source set 的属性：
 
 Java 插件向 project 里的每个 source set 添加了一个 JavaCompile task。这个 task 的类型继承自 JavaCompile task（见第 23.11 节，“CompileJava”）。除非groovyOptions.useAnt 设置为 true，否则将使用 Gradle 集成的本地的 Groovy 编译器。对于大多数项目而言，这相比基于 Ant 编译器，是个更好的选择。GroovyCompile task 支持官方的 Groovy 编译器的大多数配置选项。
 
-表 24.6. Groovy 插件 - GroovyCompile 属性
+表 Groovy 插件 - GroovyCompile 属性
 
 <table id="N12C6F" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

@@ -6,7 +6,7 @@ Scala 的插件继承自 Java 插件并添加了对 Scala 项目的支持。它�
 
 要使用 Scala 插件，请在构建脚本中包含以下语句：
 
-**示例 25.1. 使用 Scala 插件**
+**示例 使用 Scala 插件**
 
 build.gradle  
   
@@ -18,7 +18,7 @@ apply plugin: 'scala'
 
 Scala 的插件向 project 中添加了以下任务。
 
-表 25.1. Scala 插件 - 任务
+表 Scala 插件 - 任务
 
 <table id="N12CF2" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -79,7 +79,7 @@ Scala 的插件向 project 中添加了以下任务。
 
 Scala 插件向 Java 插件所加入的 tasks 添加了以下的依赖。
 
-表 24.2. Scala感觉 插件 - 额外的task 依赖
+表 Scala感觉 插件 - 额外的 task 依赖
 
 <table id="N12D57" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -112,7 +112,7 @@ Scala 插件向 Java 插件所加入的 tasks 添加了以下的依赖。
 </tbody>
 </table>  
 
-图 25.1. Scala 插件-任务
+图 Scala 插件-任务
 
 ![](images/04.png)  
 
@@ -120,7 +120,7 @@ Scala 插件向 Java 插件所加入的 tasks 添加了以下的依赖。
 
 Scala 插件会假定如下所示的项目布局。所有 Scala 的源目录都可以包含 Scala<s1><e2>和</e2></s1>Java 代码。Java 源目录只能包含 Java 源代码。这些目录不一定是存在的，或是里面包含有什么内容；Scala 插件只会进行编译，而不管它发现什么。
 
-表 25.3. Scala 插件 - 项目布局
+表 Scala 插件 - 项目布局
 
 <table id="scalalayout" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -193,7 +193,7 @@ Test Scala 源代码。此外可能包含联合编译的 Java 源代码。</td>
 
 和 Java 插件一样，Scala 插件允许把 Scala 的 production 和 test 的源文件配置为自定义的位置。
 
-**示例 24.2. 自定义 Scala 源文件布局**
+**示例 自定义 Scala 源文件布局**
 
 build.gradle  
   
@@ -218,7 +218,7 @@ Scala 项目需要声明一个 scala-library 依赖项。这个依赖会在编�
 
 如果 Scala 用于 production 代码， scala-library 依赖应该添加到 compile 的配置中：
 
-**示例 25.3. 为production 代码定义一个Scala 依赖**
+**示例 为production 代码定义一个Scala 依赖**
 
 build.gradle  
   
@@ -233,7 +233,7 @@ dependencies {
 
 如果 Scala 仅用于测试代码， scala-library 依赖应被添加到 testCompile 配置中：
 
-**示例 25.4. 为 test 代码定义一个Scala 依赖**
+**示例 为 test 代码定义一个Scala 依赖**
 
 build.gradle  
   
@@ -260,7 +260,7 @@ Scala 插件没有向 project 添加任何的公约属性。
 
 Scala 的插件向 project 的每一个 source set 添加了下列的公约属性。你可以在你的构建脚本中，把这些属性当成是 source set 对象中的属性一样使用 （见第 21.3，“公约”）。
 
-表 25.4. Scala 插件 - source set 属性
+表 Scala 插件 - source set 属性
   
 <table id="N12EA2" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -315,7 +315,7 @@ Scala 的插件向 project 的每一个 source set 添加了下列的公约属�
 
 Scala 的插件还修改了一些 source set 的属性：
 
-表 25.5. Scala 插件 - source set 属性
+表 Scala 插件 - source set 属性
   
 <table id="N12F12" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -346,7 +346,7 @@ Scala 的插件还修改了一些 source set 的属性：
 
 Scala 插件包含了对 fsc，即 Fast Scala Compiler 的支持。fsc运行在一个单独的进程中，并且可以显著地提高编译速度。
 
-**示例 25.5. 启用 Fast Scala Compiler**
+**示例 启用 Fast Scala Compiler**
 
 build.gradle  
   
@@ -366,7 +366,7 @@ compileScala
 
 外部过程默认使用JVM 的的默认内存设置。如果要调整内存设置，请根据需要配置scalaCompileOptions.forkOptions ：
 
-**示例 25.6. 调整内存设置**
+**示例 调整内存设置**
 
 build.gradle  
   
@@ -385,7 +385,7 @@ tasks.withType(ScalaCompile) {
 
 Scala 插件现在通过集成 Zinc 来支持增量编译， 它是 sbt 增量 Scala 编译器的一个单机版本。若要把 ScalaCompile 任务从默认的基于 Ant 的编译器切换为新的基于 Zinc 的编译器，需要将 scalaCompileOptions.useAnt 设置为 false：
 
-**示例 25.7. 激活基于 Zinc 编译器**
+**示例 激活基于 Zinc 编译器**
 
 build.gradlev  
   

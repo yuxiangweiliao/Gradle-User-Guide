@@ -24,7 +24,7 @@ Sonar Runner 插件是 Sonar 插件的继任者。目前它还在孵化中的状
 
 若要开始，请对要分析的项目配置使用 Sonar Runner 插件。
 
-**示例 36.1. 配置使用 Sonar Runner 插件**
+**示例 配置使用 Sonar Runner 插件**
 
 build.gradle  
   
@@ -40,7 +40,7 @@ apply plugin: "sonar-runner"
 
 Sonar Runner 插件向 project 添加了一个 SonarRunner 扩展，它允许通过被称为 Sonar 属性 的键/值对配置 Sonar Runner。一个典型的基线配置包括了 Sonar 服务器和数据库的连接设置。
 
-**示例 36.2. 配置 Sonar 连接设置**
+**示例 配置 Sonar 连接设置**
 
 build.gradle  
   
@@ -62,7 +62,7 @@ sonarRunner {
 
 Sonar Runner 插件利用 Gradle 的对象模型所包含的信息，提供了许多标准的 Sonar 属性的智能默认值。下表总结了这些默认值。注意，对于配置使用了 java-base 或 java 插件的project，有提供另外的默认值。对于一些属性（尤其是服务器和数据库的连接配置），确定留给 Sonar Runner 一个合适的默认值。
 
-表 36.1. 标准 Sonar 属性的 Gradle 默认值
+表 标准 Sonar 属性的 Gradle 默认值
   
 <table id="N13AC1" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -119,7 +119,7 @@ sonar.dynamicAnalysis</td>
 </tbody>
 </table>
 
-表 36.2. 配置使用 java-base 插件时另外添加的默认值
+表 配置使用 java-base 插件时另外添加的默认值
 
 <table id="N13B05" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -146,7 +146,7 @@ project.targetCompatibility</td>
 </tbody>
 </table>  
 
-表 36.2. 配置使用 java 插件时另外添加的默认值
+表 配置使用 java 插件时另外添加的默认值
 
 <table id="N13B24" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -203,7 +203,7 @@ Sonar Runner 插件能够一次分析整个项目的层次结构。它能够在 
 
 要分析一个项目的层次结构， 需要把 Sonar Runner 插件应用于层次结构的最顶层项目。通常（但不是一定）会是这个 Gradle 构建的根项目。与分析有关的信息作为一个整体，比如服务器和数据库的连接设置，必须在这一个 project 的 sonarRunner 块中进行配置。在命令行上设置的任何 Sonar 属性也会应用到这个 project 中。
 
-**示例 36.3. 全局配置设置**
+**示例 全局配置设置**
 
 build.gradle  
   
@@ -221,7 +221,7 @@ sonarRunner {
 
 在 subprojects 块中，可以配置共享子项目之间的配置。
 
-**示例 36.4. 共享的配置设置**
+**示例 共享的配置设置**
 
 build.gradle  
   
@@ -237,7 +237,7 @@ subprojects {
 
 特定项目的信息在对应的 project 的 sonarRunner 块中配置。
 
-**示例 36.5. 个别配置设置**
+**示例 个别配置设置**
 
 build.gradle  
   
@@ -253,7 +253,7 @@ project
 
 对于一个特定的子项目，要跳过 Sonar 分析，可以设置 sonarRunner.skipProject。
 
-**示例 36.6. 跳过项目分析**
+**示例 跳过项目分析**
 
 build.gradle  
   
@@ -269,7 +269,7 @@ project
 
 默认情况下， Sonar Runner 插件传给 project 的 main source set 将作为生产源文件，传给 project 的 test source sets 将作为测试源文件。这个过程与 project 的源目录布局无关。根据需要，可以添加额外的 source sets。
 
-**示例 36.7. 分析自定义的Source Sets**
+**示例 分析自定义的Source Sets**
 
 build.gradle  
   
@@ -286,7 +286,7 @@ sonarRunner {
 
 要分析非 Java 语言编写的代码，请安装相应的 Sonar 插件，并相应地设置sonar.project.language ：
 
-**示例 36.8. 分析非 Java 语言**
+**示例 分析非 Java 语言**
 
 build.gradle  
   
@@ -328,7 +328,7 @@ gradle sonarRunner -Dsonar.host.url=http://sonar.mycompany.com -Dsonar.jdbc.pass
 
 Sonar Runner 插件向 project 中添加了以下任务。
 
-表 36.4. Sonnar Runner 插件 - 任务  
+表 Sonnar Runner 插件 - 任务  
   
 <table id="N13C10" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

@@ -8,7 +8,7 @@ OSGi 插件使 Peter Kriens [BND tool](http://www.aqute.biz/Code/Bnd) 大量使�
 
 要使用 OSGi 插件，请在构建脚本中包含以下语句：
 
-**示例 37.1. 使用 OSGi 插件**
+**示例 使用 OSGi 插件**
 
 build.gradle  
   
@@ -40,7 +40,7 @@ OSGi 插件没有向 project 添加任何的公约属性。
 
 OSGi 插件添加了以下方法。有关更多详细信息，请参见约定对象的 API 文档。
 
-表 37.1. OSGi 方法
+表 OSGi 方法
   
 <table id="N13C87" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -75,7 +75,7 @@ osgiManifest(Closure cl)</td>
 
 在 classes 目录下的类文件会被分析出关于它们的包的依赖，以及它们所公布的包名。并基于此计算 OSGi Manifest 中 Import-Package 和 Export-Package 的值。如果 classpath 中包含了 jar 包和 OSGi bundle，bundle 信息会被用来指定 Import-Package 的值的版本信息。在 OsgiManifest 对象的显式属性旁边，你可以添加 instructions。
 
-**示例 37.2. OSGi MANIFEST.MF 文件配置**
+**示例 OSGi MANIFEST.MF 文件配置**
 
 build.gradle  
   

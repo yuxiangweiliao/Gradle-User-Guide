@@ -117,7 +117,6 @@ task intro(dependsOn: hello) << {
 gradle -q intro 的输出结果
 
 ```
-Output of gradle -q intro
 \> gradle -q intro
 Hello world!
 I'm Gradle

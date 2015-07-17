@@ -20,7 +20,7 @@ apply plugin: 'checkstyle'
 
 Checkstyle 插件向 project 中添加了以下 tasks：
 
-表 29.1. Checkstyle 插件 - tasks
+表 Checkstyle 插件 - tasks
   
 <table id="N1335A" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -71,7 +71,7 @@ Checkstyle 插件向 project 中添加了以下 tasks：
 
 Checkstyle 插件向 Java 插件所加入的 tasks 添加了以下的依赖。
 
-表 29.2. Checkstyle 插件 - 额外的task 依赖
+表 Checkstyle 插件-额外的 task 依赖
 
 <table id="N133B1" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -96,7 +96,7 @@ Checkstyle 插件向 Java 插件所加入的 tasks 添加了以下的依赖。
 
 Checkstyle 插件预计是以下的项目布局：
 
-表 29.3. Checkstyle 插件 - 项目布局
+表 Checkstyle 插件-项目布局
   
 <table id="N133CD" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -121,7 +121,7 @@ Checkstyle 配置文件</td>
 
 Checkstyle 插件添加了下列的依赖配置：
 
-表29.4. Checkstyle 插件 ​​- 依赖配置
+表 Checkstyle 插件-依赖配置
   
 <table id="N133E9" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

@@ -6,7 +6,7 @@ FindBugs 插件使用 FindBugs 对项目的 Java 源文件执行质量检查，�
 
 要使用 FindBugs 插件，请在构建脚本中包含以下语句：
 
-**示例 31.1. 使用 FindBugs 插件**
+**示例 使用 FindBugs 插件**
 
 build.gradle  
   
@@ -71,7 +71,7 @@ FindBugs 插件向 project 中添加了以下任务：
 
 FindBugs 插件向 Java 插件所加入的任务添加了以下的依赖。
 
-表 31.2. FindBugs 插件 - 附加的任务依赖
+表 FindBugs 插件 - 附加的任务依赖
 
 <table id="N13556" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -96,7 +96,7 @@ FindBugs 插件向 Java 插件所加入的任务添加了以下的依赖。
 
 FindBugs 插件增加了下列的依赖配置：
 
-表31.3. FindBugs 插件 ​​- 依赖配置
+表 FindBugs 插件 ​​- 依赖配置
   
 <table id="N13572" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

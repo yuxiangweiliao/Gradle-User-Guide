@@ -8,7 +8,7 @@ JaCoCo 插件通过集成 JaCoCo为 Java 代码提供了代码覆盖率指标。
 
 要想开始，请将 JaCoCo 插件应用于你想要计算代码覆盖率的项目中。
 
-**示例 34.1. 应用 JaCoCo 插件**
+**示例 应用 JaCoCo 插件**
 
 build.gradle  
   
@@ -22,7 +22,7 @@ apply plugin: "jacoco"
 
 JaCoCo 插件添加一个名为 jacoco 类型为 JacocoPluginExtension 的 project 扩展，这个扩展允许在你的构建中配置 JaCoCo 所使用的默认值。
 
-**示例 34.2. 配置 JaCoCo 插件设置**
+**示例 配置 JaCoCo 插件设置**
 
 build.gradle  
 
@@ -33,7 +33,7 @@ jacoco
 }  
 ```  
 
-表 34.1. JaCoCo 属性的 Gradle 默认值
+表 JaCoCo 属性的 Gradle 默认值
   
 <table id="N13746" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -58,7 +58,7 @@ reportsDir</td>
 
 JacocoReport 任务可以用于生成不同格式的代码覆盖率报告。它实现了标准的 Gradle 类型Reporting，并呈现了一个 JacocoReportsContainer 类型的报告容器。
 
-**示例 34.3. 配置测试任务**
+**示例 配置测试任务**
 
 build.gradle  
   
@@ -78,7 +78,7 @@ jacocoTestReport {
 
 JaCoCo 插件添加了一个 JacocoTaskExtension 扩展到 Test 类型的所有任务中。该扩展允许配置 JaCoCo 中的测试任务的一些特定属性。
 
-**示例 34.4. 配置测试任务**
+**示例 配置测试任务**
 
 build.gradle  
   
@@ -92,7 +92,7 @@ test {
 }  
 ```  
 
-表 34.2. JaCoCo 任务扩展的默认值
+表 JaCoCo 任务扩展的默认值
 
 <table id="N13799" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -189,7 +189,7 @@ jmx</td>
 
 例如，你可以配置您的构建使用 application 插件来生成代码覆盖率。
 
-**示例 34.5. 使用 application 插件来生成代码覆盖率数据**
+**示例 使用 application 插件来生成代码覆盖率数据**
 
 build.gradle  
   
@@ -208,7 +208,7 @@ task applicationCodeCoverageReport(type:JacocoReport){
 
 注: 此示例中的代码可以在 Gradle 的二进制分发包及源代码分发包中的 samples/testing/jacoco/application 中找到。  
 
-**示例 34.6. 由 applicationCodeCoverageReport 生成的覆盖率报告**
+**示例 由 applicationCodeCoverageReport 生成的覆盖率报告**
 
 构建布局  
   
@@ -225,7 +225,7 @@ application
 
 对于同时也配置使用了 Java 插件的项目，JaCoCo 插件会自动添加以下任务：
 
-表 34.3. JaCoCo 插件 - 任务
+表 JaCoCo 插件 - 任务
 
 <table id="N13858" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -258,7 +258,7 @@ application
 
 JaCoCo 插件添加了下列的依赖配置：
 
-表34.4. JaCoCo 插件 ​​- 依赖配置
+表 JaCoCo 插件 ​​- 依赖配置
   
 <table id="N13885" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

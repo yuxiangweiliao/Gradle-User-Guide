@@ -6,7 +6,7 @@ Java 插件向一个项目添加了 Java 编译、 测试和 bundling 的能力�
 
 要使用 Java 插件，请在构建脚本中加入：
 
-**示例 23.1. 使用 Java 插件**
+**示例 使用 Java 插件**
 
 build.gradle  
   
@@ -26,7 +26,7 @@ Java 插件定义了两个标准的源集，分别是 main 和 test。main 源�
 
 Java 插件向你的项目添加了大量的任务，如下所示。
 
-表 23.1. Java 插件-任务
+表 Java 插件-任务
   
 <table id="N11EAC" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -169,7 +169,7 @@ Java 插件向你的项目添加了大量的任务，如下所示。
 
 对于每个你添加到该项目中的源集，Java 插件将添加以下的编译任务：
 
-表 23.2. Java 插件-源集任务
+表 Java 插件-源集任务
   
 <table id="java_source_set_tasks" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -220,7 +220,7 @@ Java 插件向你的项目添加了大量的任务，如下所示。
 
 Java 插件还增加了大量的任务构成该项目的生命周期：
 
-表 23.3. Java 插件-生命周期任务
+表 Java 插件-生命周期任务
   
 <table id="N1204B" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -375,7 +375,7 @@ Java 测试源代码</td>
 
 你可以通过配置适当的源集，来配置项目的布局。这一点将在以下各节中详细讨论。这里是如何更改 main Java 和资源源目录的一个简短的例子。
 
-**示例 23.2. 自定义Java 源代码布局**
+**示例 自定义Java 源代码布局**
 
 build.gradle  
   
@@ -396,7 +396,7 @@ sourceSets {
 
 Java 插件向项目添加了许多依赖配置，如下图所示。它对一些任务指定了这些配置，如compileJava和test。
 
-表23.5. Java插件 ​​- 依赖配置
+表 Java插件 ​​- 依赖配置
   
 <table id="tab:configurations" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -475,13 +475,13 @@ runtime</td>
 </tbody>
 </table>
   
-图23.2. Java插件 ​​- 依赖配置
+图 Java插件 ​​- 依赖配置
 
 Java插件 ​​- 依赖配置  
 
 对于每个你添加到项目中的源集，Java 插件都会添加以下的依赖配置：
 
-表23.6. Java插件 ​​- 源集依赖配置
+表 Java插件 ​​- 源集依赖配置
   
 <table id="java_source_set_configurations" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -524,7 +524,7 @@ compile<span class="replaceable" style="margin:0px; padding:0px; border:0px; fon
 
 Java 插件向项目添加了许多常规属性，如下图所示。您可以在构建脚本中使用这些属性，就像它们是 project 对象的属性一样（见第21.3节，“约定”）。
 
-表23.7. Java插件 ​​- 目录属性
+表 Java插件 ​​- 目录属性
   
 <table id="javaconventionDir" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -683,7 +683,7 @@ Java 插件向项目添加了许多常规属性，如下图所示。您可以在
 </tbody>
 </table>
 
-表 23.8. Java 插件 - 其他属性
+表 Java 插件 - 其他属性
     
 <table id="javaconventionNonDir" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -760,7 +760,7 @@ Java 插件向项目添加了许多常规属性，如下图所示。您可以在
 
 你可以使用 sourceSets 属性访问项目的源集。这是项目的源集的容器，它的类型是 SourceSetContainer。除此之后，还有一个 sourceSets {}的脚本块，可以传入一个闭包来配置源集容器。源集容器的使用方式几乎与其他容器一样，例如 tasks。
 
-**示例 23.3. 访问源集**
+**示例 访问源集**
 
 build.gradle  
   
@@ -784,7 +784,7 @@ sourceSets.all {
 
 要配置一个现有的源集，你只需使用上面的其中一种访问方法来设置源集的属性。这些属性将在下文中进行介绍。下面是一个配置 main 的 Java 和资源目录的例子：
 
-**示例 23.4. 配置源集的源代码目录**
+**示例 配置源集的源代码目录**
 
 build.gradle  
   
@@ -805,7 +805,7 @@ sourceSets {
 
 下表列出了一些重要的源集属性。你可以在 SourceSet 的 API 文档中查看更多的详细信息。
 
-表 23.9. Java 插件 - 源集属性
+表 Java 插件 - 源集属性
   
 <table id="N1248B" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -955,7 +955,7 @@ sourceSets {
 
 要定义一个新的源集，你只需在 sourceSets {}块中引用它。下面是一个示例：
 
-**示例 23.5. 定义一个源集**
+**示例 定义一个源集**
 
 build.gradle  
   
@@ -967,7 +967,7 @@ sourceSets {
 
 当您定义一个新的源集时，Java 插件会为该源集添加一些依赖配置，如表 23.6，“Java 插件 - 源集依赖项配置”所示。你可以使用这些配置来定义源集的编译和运行时的依赖。
 
-**示例 23.6. 定义源集依赖**
+**示例 定义源集依赖**
 
 build.gradle  
   
@@ -983,7 +983,7 @@ dependencies {
 
 Java 插件还添加了大量的任务，用于组装源集的类，如表 23.2，“Java 插件 - 源设置任务”所示。例如，对于一个被叫做 intTest 的源集，你可以运行 gradle intTestClasses 来编译 int 测试类。
 
-**示例 23.7. 编译源集**
+**示例 编译源集**
 
 gradle intTestClasses的输出结果  
 
@@ -998,7 +998,7 @@ Total time: 1 secs
 
 添加一个包含了源集的类的 JAR 包
 
-**示例 23.8. 为一个源集装配一个JAR文件**
+**示例 为一个源集装配一个JAR文件**
 
 build.gradle  
   
@@ -1010,7 +1010,7 @@ task intTestJar(type: Jar) {
 
 为一个源集生成 Javadoc：
 
-**示例 23.9. 为一个源集生成 Javadoc：**
+**示例 为一个源集生成 Javadoc：**
 
 build.gradle  
   
@@ -1022,7 +1022,7 @@ task intTestJavadoc(type: Javadoc) {
 
 添加一个测试套件以运行一个源集里的测试
 
-**示例 23.10. 运行源集里的测试**
+**示例 运行源集里的测试**
 
 build.gradle  
   
@@ -1037,7 +1037,7 @@ task intTest(type: Test) {
 
 Javadoc 任务是 Javadoc 的一个实例。它支持核心的 javadoc 参数选项，以及在 Javadoc 可执行文件的参考文档中描述的标准 doclet 参数选项。对于支持的 Javadoc 参数选项的完整列表，请参考下面的类的 API 文档： CoreJavadocOptions 和StandardJavadocDocletOptions。
 
-表 23.10. Java 插件 - Javadoc 属性
+表 Java 插件 - Javadoc 属性
 
 <table id="N12656" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -1093,7 +1093,7 @@ project的名称和版本</td>
 
 clean 任务是 Delete 的一个实例。它只是删除由其 dir 属性表示的目录。
  
-表 23.11. Java 插件 - Clean 性能
+表 Java 插件 - Clean 性能
   
 <table id="N126BD" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -1122,7 +1122,7 @@ clean 任务是 Delete 的一个实例。它只是删除由其 dir 属性表示�
 
 Java 插件使用 Copy 任务进行资源的处理。它为该 project 里的每个源集添加一个实例。你可以在16.6章节，“复制文件”中找到关于 copy 任务的更多信息。
 
-表 23.12. Java 插件-ProcessResources 属性
+表 Java 插件-ProcessResources 属性
   
 <table id="N126EB" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -1162,7 +1162,7 @@ Java 插件使用 Copy 任务进行资源的处理。它为该 project 里的每
 
 Java 插件为该 project 里的每个源集添加一个 JavaCompile 实例。一些最常见的配置选项如下所示。
 
-表 23.13. Java 插件- Compile属性
+表 Java 插件- Compile属性
 
 <table id="N12731" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -1252,7 +1252,7 @@ test 任务提供了一个 Test.getDebug()属性，可以设置为启动，使JV
 - Gradle 尽最大努力对有着特定的测试框架 API 的局限的测试进行过滤。一些高级的、 综合的测试可能不完全符合过滤条件。然而，绝大多数的测试和用例都会被很好地处理。
 - 测试过滤将会取代基于文件的测试选择。后者可能在将来会被完全地取代掉。我们将会继续改进测试过滤的API，并添加更多种类的过滤器。  
 
-**示例 23.11. 在构建脚本中过滤测试**
+**示例 在构建脚本中过滤测试**
 
 build.gradle  
   
@@ -1314,7 +1314,7 @@ JUnit 和 TestNG 可以对测试方法进行复杂的分组。
 
 为对 Junit 测试类和方法进行分组，JUnit 4.8引入了类别的概念。[9] test 任务可以实现一个规范，让你 include 和 exclude 想要的 JUnit 类别。
 
-**示例 23.12. JUnit 类别**
+**示例 JUnit 类别**
 
 build.gradle  
   
@@ -1329,7 +1329,7 @@ test {
 
 TestNG 框架有一个非常相似的概念。在 TestNG 中你可以指定不同的测试组。[10]应从测试执行中 include 或 exclude 的测试组，可以在 test 任务中配置。
 
-**示例 23.13. 对TestNG 测试分组**
+**示例 对TestNG 测试分组**
 
 build.gradle  
   
@@ -1354,7 +1354,7 @@ test 任务默认情况下会生成以下结果。
 
 这里还有一个独立的 TestReport 任务类型，它可以从一个或多个 Test 任务实例生成的二进制结果中生成 HTML 测试报告。要使用这个任务类型，你需要定义一个 destinationDir 和要包含到报告的测试结果。这里是一个范例，从子项目的单元测试中生成一个联合报告：
 
-**示例 23.14. 为多个子项目创建一个单元测试报告**
+**示例 为多个子项目创建一个单元测试报告**
 
 build.gradle  
   
@@ -1384,7 +1384,7 @@ TestNG 支持参数化测试方法，允许一个特定的测试方法使用不�
 
 ### 常规值
 
-表 23.14. Java 插件 - test属性
+表 Java 插件 - test属性
   
 <table id="N12919" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -1449,7 +1449,7 @@ Jar 任务创建一个包含类文件和项目资源的 JAR 文件。JAR 文件�
 
 每个 jar 或war 对象都有一个单独的 Manifest 实例的 manifest 属性。当生成 archive时，相应的 MANIFEST.MF 文件也会被写入进去。
 
-**示例 23.15. 自定义的MANIFEST.MF**
+**示例 自定义的MANIFEST.MF**
 
 build.gradle  
   
@@ -1463,7 +1463,7 @@ jar {
 
 您可以创建一个单独的 Manifest 实例。它可以用于共享两个 jar 包的 manifest 信息。
 
-**示例 23.16. 创建一个manifest 对象。**
+**示例 创建一个manifest 对象。**
 
 build.gradle  
   
@@ -1480,7 +1480,7 @@ task fooJar(type: Jar) {
 
 你可以把其他的 manifest 合并到任何一个 Manifest 对象中。其他的 manifest 可能使用文件路径来描述，像上面的例子，使用对另一个 Manifest 对象的引用。
 
-**示例 23.17. 指定archive的单独MANIFEST.MF**
+**示例 指定archive的单独MANIFEST.MF**
 
 build.gradle  
   
@@ -1507,7 +1507,7 @@ Manifest 会根据在 from 语句中所声明的顺序进行合并。如果基�
 
 你可以很轻松地把一个 manifest 写入磁盘中。
 
-**示例 23.18. 指定archive的单独 MANIFEST.MF**
+**示例 指定archive的单独 MANIFEST.MF**
 
 build.gradle  
   

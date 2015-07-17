@@ -8,7 +8,7 @@ Gradle 在它的核心中有意地提供了一些小但有用的功能，用于�
 
 插件都认为是被应用，通过 Project.apply()方法来完成。
 
-**示例 21.1. 应用插件**
+**示例 应用插件**
 
 build.gradle  
   
@@ -20,7 +20,7 @@ apply plugin: 'java'
 
 我们还可以使用下面的语法：
 
-**示例 21.2. 通过类型应用插件**
+**示例 通过类型应用插件**
 
 build.gradle  
   
@@ -30,7 +30,7 @@ apply plugin: org.gradle.api.plugins.JavaPlugin
 
 由于 Gradle 的默认导入（见附录 E，现有的 IDE 支持和如何应对不支持的情况），您还可以这样写：
 
-**示例 21.3. 通过类型应用插件**
+**示例 通过类型应用插件**
 
 build.gradle  
   
@@ -55,7 +55,7 @@ apply plugin: JavaPlugin
 
 让我们来看看：
 
-**示例 21.4. 通过插件添加任务**
+**示例 通过插件添加任务**
 
 build.gradle  
   
@@ -83,7 +83,7 @@ Java 插件已经向项目添加了 compileJava 任务和 processResources 任�
 
 我们可以简单地通过给它一个新的值来更改此属性。
 
-**示例 21.5. 更改插件的默认设置**
+**示例 更改插件的默认设置**
 
 build.gradle  
   
@@ -106,7 +106,7 @@ Java 插件添加了 source sets 的概念 （见SourceSet） 来描述的源文
 
 我们可以通过这个源码集修改写入类文件的位置。
 
-**示例 21.6. 插件中的约定对象**
+**示例 插件中的约定对象**
 
 build.gradle  
   

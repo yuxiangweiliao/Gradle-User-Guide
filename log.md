@@ -69,7 +69,7 @@ LIFECYCLE 及更高</td>
 </tr>
 <tr >
 <td >
-<code >-q</code><code>--quiet</code></td>
+<code >-q</code> or <code>--quiet</code></td>
 <td >
 QUIET 及更高</td>
 </tr>

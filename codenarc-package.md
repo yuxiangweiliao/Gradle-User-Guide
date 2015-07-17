@@ -6,7 +6,7 @@ CodeNarc 插件使用 CodeNarc 对项目的 Groovy 源文件执行质量检查�
 
 要使用 CodeNarc 插件，请在构建脚本中包含以下语句：
 
-**示例 30.1. 使用 CodeNarc 插件**
+**示例 使用 CodeNarc 插件**
 
 build.gradle  
   
@@ -20,7 +20,7 @@ apply plugin: 'codenarc'
 
 CodeNarc 插件向project 中添加了以下任务：
 
-表 30.1. CodeNarc 插件 - 任务
+表 CodeNarc 插件 - 任务
   
 <table id="N1342E" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -95,7 +95,7 @@ CodeNarc 插件向 Groovy 插件所加入的任务添加了以下的依赖。
 ## 项目布局  
 CodeNarc 插件预计是以下的项目布局：
 
-表 30.3. CodeNarc 插件 - 项目布局
+表 CodeNarc 插件 - 项目布局
   
 <table id="N1349C" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -116,10 +116,11 @@ CodeNarc 配置文件</td>
 </tbody>
 </table>
 
-## 依赖管理
+## 依赖管理  
+
 CodeNarc 插件添加了下列的依赖配置：
 
-表30.4. CodeNarc 插件 ​​- 依赖配置
+表 CodeNarc 插件 ​​- 依赖配置
   
 <table id="N134B8" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">

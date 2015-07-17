@@ -6,7 +6,7 @@ PMD 插件使用PMD对项目的 Java 源文件执行质量检查，并从检查�
 
 要使用 PMD 插件，请在构建脚本中包含以下语句：
 
-**示例 33.1. 使用 PMD 插件**
+**示例 使用 PMD 插件**
 
 build.gradle  
   
@@ -20,7 +20,7 @@ apply plugin: 'pmd'
 
 PMD 插件向 project 中添加了以下任务：
 
-表 33.1. PMD 插件 - 任务
+表 PMD 插件 - 任务
    
 <table id="N13671" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -71,7 +71,7 @@ PMD 插件向 project 中添加了以下任务：
 
 PMD 插件向 Java 插件所加入的任务添加了以下的依赖。
 
-表 33.2. PMD 插件 - 附加的任务依赖
+表 PMD 插件 - 附加的任务依赖
 
 <table id="N136C3" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
@@ -96,7 +96,7 @@ PMD 插件向 Java 插件所加入的任务添加了以下的依赖。
 
 PMD 插件添加了下列的依赖配置：
 
-表33.3. PMD 插件 ​​- 依赖配置
+表 PMD 插件 ​​- 依赖配置
   
 <table id="N136DF" style="margin:0px 0px 1.4em; padding:0px; border:1px solid rgb(208,208,208); font-family:inherit; font-size:14px; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:middle; border-collapse:collapse; border-spacing:0px; min-width:50%">
 <thead style="margin:0px; padding:0px; border:0px; font-family:inherit; font-size:undefined; font-style:inherit; font-variant:inherit; font-weight:inherit; line-height:inherit; vertical-align:baseline">
