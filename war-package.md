@@ -62,12 +62,12 @@ war</td>
 </tr>
 </table>
 
-图 26.1. War 插件 - tasks
+图 War 插件 - tasks
 
 ![](images/05.png)  
 
 ## 项目布局
-表 26.3. War 插件 - 项目布局
+表  War 插件 - 项目布局
   
 <table>
 <tr>
@@ -131,7 +131,7 @@ Web 应用程序的源目录。</td>
 
 ## War  
 
-War task 的默认行为是将 src/main/webapp 的内容复制到 archive 的根目录下。你的webapp 目录自然可能包含一个 WEB-INF 子目录，这个子目录可能还再包含一个 web.xml 文件。已编译的类被编译进 WEB-INF/classes。所有 runtime [13]配置的依赖被复制到 WEB-INF/lib。
+War task 的默认行为是将 src/main/webapp 的内容复制到 archive 的根目录下。你的webapp 目录自然可能包含一个 WEB-INF 子目录，这个子目录可能还再包含一个 web.xml 文件。已编译的类被编译进 WEB-INF/classes。所有 runtime[[13]](#footname) 配置的依赖被复制到 WEB-INF/lib。
 
 另请参阅 War。
 
@@ -176,3 +176,8 @@ war {
 ```  
 
 当然，你可以用一个定义了 excludes 和 includes 的闭包来配置不同的文件集。
+
+
+----------
+<a name="footname">
+[13]</a>runtime配置继承自compile配置。
